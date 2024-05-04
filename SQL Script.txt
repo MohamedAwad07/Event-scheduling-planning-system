@@ -44,3 +44,16 @@ INSERT INTO EVENTS VALUES (9, 'Event 9', TIMESTAMP '2024-05-11 12:00:00', TIMEST
 INSERT INTO EVENTS VALUES (10, 'Event 10', TIMESTAMP '2024-05-12 08:00:00', TIMESTAMP '2024-05-12 10:00:00', TIMESTAMP '2024-05-12 07:30:00', 'Location 10', 'Inactive', 10);
 
 commit;
+
+
+
+// Procedures
+create or replace
+PROCEDURE getUserId
+(Uname  VARCHAR2 ,  Upass VARCHAR2 , U_id out NUMBER)
+as
+begin
+select  USERID INTO U_id
+from USERS 
+where USERS.username = Uname and USERS.password = Upass;
+end;
