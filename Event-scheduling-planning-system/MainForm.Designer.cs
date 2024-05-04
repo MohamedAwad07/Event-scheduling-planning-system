@@ -502,10 +502,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(652, 484);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.Start_page);
-            this.Controls.Add(this.Home_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";

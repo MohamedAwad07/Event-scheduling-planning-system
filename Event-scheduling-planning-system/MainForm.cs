@@ -14,6 +14,7 @@ namespace Event_scheduling_planning_system
 {
     public partial class MainForm : Form
     {
+        int currentUserId;
         OracleConnection conn;
         string ordb = "Data source  = orcl ; user id = event; password = 123";
         public MainForm()
@@ -27,10 +28,6 @@ namespace Event_scheduling_planning_system
             conn.Open();
             LogIn_page.BringToFront();
             Start_page.BringToFront();
-
-            homePageBody.Controls.Add(new EventCard());
-            homePageBody.Controls.Add(new EventCard());
-            homePageBody.Controls.Add(new EventCard());
         }
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -46,7 +43,7 @@ namespace Event_scheduling_planning_system
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
-            int userId;
+         
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
@@ -64,8 +61,9 @@ namespace Event_scheduling_planning_system
                 c.ExecuteNonQuery();
                 //Console.WriteLine("Username :" + username1_txb.Text + " >>>   Pass : " + password1_txb.Text);
 
-                userId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
-                Home_page.BringToFront();
+                currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
+
+                DisplayHomePage();
             
             }
             catch {
@@ -78,7 +76,7 @@ namespace Event_scheduling_planning_system
         {
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
-            int userId;
+          
             c.CommandText = "getUserId";
             c.CommandType = CommandType.StoredProcedure;
 
@@ -90,12 +88,13 @@ namespace Event_scheduling_planning_system
                 c.ExecuteNonQuery();
                 //Console.WriteLine("Username :" + username1_txb.Text + " >>>   Pass : " + password1_txb.Text);
 
-                userId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
-                return userId + 1;
+                currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString()) + 1;
+                return currentUserId;
 
             }
             catch
             {
+               currentUserId = 1;
                return 1;
             }
         }
@@ -134,7 +133,7 @@ namespace Event_scheduling_planning_system
 
             if (r != -1)
             {
-              Home_page.BringToFront();
+               DisplayHomePage();
             }
             else
                 MessageBox.Show("Something went worng");
@@ -161,8 +160,44 @@ namespace Event_scheduling_planning_system
             LogIn_page.BringToFront();
         }
 
+        public void DisplayEventsByStartDate()
+        {
+
+            OracleCommand c = new OracleCommand();
+            c.Connection = conn;
+        
+            c.CommandText = "displayEventsByStartDate";
+            c.CommandType = CommandType.StoredProcedure;
+
+            c.Parameters.Add("currId" , currentUserId );
+            c.Parameters.Add("Data", OracleDbType.RefCursor, ParameterDirection.Output);
+
+            OracleDataReader dr = c.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //Console.WriteLine("Name  : " + dr["EVENTNAME"]);
+
+                EventCard card = new EventCard(
+                    dr["EVENTNAME"].ToString(),
+                    dr["EVENTLOCATION"].ToString(),
+                    dr["STARTDATETIME"].ToString(),
+                    dr["ENDDATETIME"].ToString(),
+                    dr["REMINDERDATETIME"].ToString(),
+                    dr["EVENTSTATUS"].ToString()
+                    ) ;
+                homePageBody.Controls.Add(card);
+            }
+            dr.Close();
+        }
+
+        public void DisplayHomePage()
+        {
+            DisplayEventsByStartDate();
+            Home_page.BringToFront();
+        }
+
         #endregion
 
-       
     }
 }

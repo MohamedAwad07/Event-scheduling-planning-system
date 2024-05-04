@@ -49,7 +49,7 @@ commit;
 
 // Procedures
 create or replace
-PROCEDURE getUserId
+PROCEDURE Login
 (Uname  VARCHAR2 ,  Upass VARCHAR2 , U_id out NUMBER)
 as
 begin
@@ -57,3 +57,28 @@ select  USERID INTO U_id
 from USERS 
 where USERS.username = Uname and USERS.password = Upass;
 end;
+
+
+
+create or replace PROCEDURE getUserId 
+(UID out NUMBER )
+as
+BEGIN
+SELECT Max(USERID) INTO UID
+from USERS ;
+end ;
+
+
+
+create or replace
+PROCEDURE displayEventsByStartDate
+(U_id  VARCHAR2 , cur out sys_refcursor)
+as
+begin
+open cur for
+select  *  
+from EVENTS 
+where U_id = EVENTS.USERID 
+Order by EVENTS.STARTDATETIME ;
+end;
+
