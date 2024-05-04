@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Login_page = new System.Windows.Forms.Panel();
             this.eye_open1 = new System.Windows.Forms.Button();
+            this.eye_close1 = new System.Windows.Forms.Button();
             this.signUp_btn = new System.Windows.Forms.Label();
             this.password1_txb = new System.Windows.Forms.TextBox();
             this.username1_txb = new System.Windows.Forms.TextBox();
@@ -46,9 +47,16 @@
             this.password2_txb = new System.Windows.Forms.TextBox();
             this.signIn_btn = new System.Windows.Forms.Label();
             this.create_acc_btn = new System.Windows.Forms.Button();
-            this.eye_close1 = new System.Windows.Forms.Button();
+            this.Home_page = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Home_header = new System.Windows.Forms.Panel();
+            this.doneFilter_btn = new System.Windows.Forms.Button();
+            this.reminderDateFilter_btn = new System.Windows.Forms.Button();
+            this.startDateFilter_btn = new System.Windows.Forms.Button();
             this.Login_page.SuspendLayout();
             this.Signup_page.SuspendLayout();
+            this.Home_page.SuspendLayout();
+            this.Home_header.SuspendLayout();
             this.SuspendLayout();
             // 
             // Login_page
@@ -84,6 +92,24 @@
             this.eye_open1.Size = new System.Drawing.Size(35, 35);
             this.eye_open1.TabIndex = 4;
             this.eye_open1.UseVisualStyleBackColor = false;
+            // 
+            // eye_close1
+            // 
+            this.eye_close1.BackColor = System.Drawing.Color.Transparent;
+            this.eye_close1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close1.BackgroundImage")));
+            this.eye_close1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_close1.CausesValidation = false;
+            this.eye_close1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_close1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_close1.FlatAppearance.BorderSize = 0;
+            this.eye_close1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_close1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_close1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_close1.Location = new System.Drawing.Point(654, 401);
+            this.eye_close1.Name = "eye_close1";
+            this.eye_close1.Size = new System.Drawing.Size(35, 35);
+            this.eye_close1.TabIndex = 6;
+            this.eye_close1.UseVisualStyleBackColor = false;
             // 
             // signUp_btn
             // 
@@ -305,37 +331,110 @@
             this.create_acc_btn.UseVisualStyleBackColor = false;
             this.create_acc_btn.Click += new System.EventHandler(this.create_acc_btn_Click);
             // 
-            // eye_close1
+            // Home_page
             // 
-            this.eye_close1.BackColor = System.Drawing.Color.Transparent;
-            this.eye_close1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close1.BackgroundImage")));
-            this.eye_close1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_close1.CausesValidation = false;
-            this.eye_close1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_close1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_close1.FlatAppearance.BorderSize = 0;
-            this.eye_close1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_close1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_close1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close1.Location = new System.Drawing.Point(654, 401);
-            this.eye_close1.Name = "eye_close1";
-            this.eye_close1.Size = new System.Drawing.Size(35, 35);
-            this.eye_close1.TabIndex = 6;
-            this.eye_close1.UseVisualStyleBackColor = false;
+            this.Home_page.Controls.Add(this.Home_header);
+            this.Home_page.Controls.Add(this.flowLayoutPanel1);
+            this.Home_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Home_page.Location = new System.Drawing.Point(0, 0);
+            this.Home_page.Name = "Home_page";
+            this.Home_page.Size = new System.Drawing.Size(978, 744);
+            this.Home_page.TabIndex = 7;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 147);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(978, 597);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // Home_header
+            // 
+            this.Home_header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home_header.BackgroundImage")));
+            this.Home_header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Home_header.Controls.Add(this.doneFilter_btn);
+            this.Home_header.Controls.Add(this.reminderDateFilter_btn);
+            this.Home_header.Controls.Add(this.startDateFilter_btn);
+            this.Home_header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Home_header.Location = new System.Drawing.Point(0, 0);
+            this.Home_header.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Home_header.Name = "Home_header";
+            this.Home_header.Size = new System.Drawing.Size(978, 152);
+            this.Home_header.TabIndex = 2;
+            // 
+            // doneFilter_btn
+            // 
+            this.doneFilter_btn.BackColor = System.Drawing.Color.Transparent;
+            this.doneFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("doneFilter_btn.BackgroundImage")));
+            this.doneFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doneFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.doneFilter_btn.FlatAppearance.BorderSize = 0;
+            this.doneFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.doneFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.doneFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneFilter_btn.Location = new System.Drawing.Point(756, 46);
+            this.doneFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.doneFilter_btn.Name = "doneFilter_btn";
+            this.doneFilter_btn.Size = new System.Drawing.Size(107, 65);
+            this.doneFilter_btn.TabIndex = 8;
+            this.doneFilter_btn.UseVisualStyleBackColor = false;
+            // 
+            // reminderDateFilter_btn
+            // 
+            this.reminderDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
+            this.reminderDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reminderDateFilter_btn.BackgroundImage")));
+            this.reminderDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reminderDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.reminderDateFilter_btn.FlatAppearance.BorderSize = 0;
+            this.reminderDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.reminderDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.reminderDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reminderDateFilter_btn.Location = new System.Drawing.Point(487, 46);
+            this.reminderDateFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reminderDateFilter_btn.Name = "reminderDateFilter_btn";
+            this.reminderDateFilter_btn.Size = new System.Drawing.Size(191, 65);
+            this.reminderDateFilter_btn.TabIndex = 4;
+            this.reminderDateFilter_btn.UseVisualStyleBackColor = false;
+            // 
+            // startDateFilter_btn
+            // 
+            this.startDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
+            this.startDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("startDateFilter_btn.BackgroundImage")));
+            this.startDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.startDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.startDateFilter_btn.FlatAppearance.BorderSize = 0;
+            this.startDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.startDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.startDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startDateFilter_btn.Location = new System.Drawing.Point(214, 46);
+            this.startDateFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.startDateFilter_btn.Name = "startDateFilter_btn";
+            this.startDateFilter_btn.Size = new System.Drawing.Size(202, 65);
+            this.startDateFilter_btn.TabIndex = 7;
+            this.startDateFilter_btn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.Login_page);
             this.Controls.Add(this.Signup_page);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Login_page.ResumeLayout(false);
             this.Login_page.PerformLayout();
             this.Signup_page.ResumeLayout(false);
             this.Signup_page.PerformLayout();
+            this.Home_page.ResumeLayout(false);
+            this.Home_header.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -360,6 +459,12 @@
         private System.Windows.Forms.Label signIn_btn;
         private System.Windows.Forms.Button create_acc_btn;
         private System.Windows.Forms.Button eye_close1;
+        private System.Windows.Forms.Panel Home_page;
+        private System.Windows.Forms.Panel Home_header;
+        private System.Windows.Forms.Button doneFilter_btn;
+        private System.Windows.Forms.Button reminderDateFilter_btn;
+        private System.Windows.Forms.Button startDateFilter_btn;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
