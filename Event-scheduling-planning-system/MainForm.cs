@@ -15,10 +15,18 @@ namespace Event_scheduling_planning_system
         public MainForm()
         {
             InitializeComponent();
+        }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
             LogIn_page.BringToFront();
             Start_page.BringToFront();
+
+            homePageBody.Controls.Add(new EventCard());
+            homePageBody.Controls.Add(new EventCard());
+            homePageBody.Controls.Add(new EventCard());
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             Start_page.Hide();

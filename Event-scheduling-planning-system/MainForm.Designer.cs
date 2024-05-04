@@ -49,7 +49,7 @@
             this.signIn_btn = new System.Windows.Forms.Label();
             this.create_acc_btn = new System.Windows.Forms.Button();
             this.Home_page = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.homePageBody = new System.Windows.Forms.FlowLayoutPanel();
             this.Home_header = new System.Windows.Forms.Panel();
             this.doneFilter_btn = new System.Windows.Forms.Button();
             this.reminderDateFilter_btn = new System.Windows.Forms.Button();
@@ -339,23 +339,23 @@
             // Home_page
             // 
             this.Home_page.Controls.Add(this.Home_header);
-            this.Home_page.Controls.Add(this.flowLayoutPanel1);
+            this.Home_page.Controls.Add(this.homePageBody);
             this.Home_page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Home_page.Location = new System.Drawing.Point(0, 0);
             this.Home_page.Name = "Home_page";
             this.Home_page.Size = new System.Drawing.Size(978, 744);
             this.Home_page.TabIndex = 7;
             // 
-            // flowLayoutPanel1
+            // homePageBody
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 147);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(978, 597);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.homePageBody.AutoScroll = true;
+            this.homePageBody.BackColor = System.Drawing.Color.White;
+            this.homePageBody.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.homePageBody.Location = new System.Drawing.Point(0, 147);
+            this.homePageBody.Margin = new System.Windows.Forms.Padding(0);
+            this.homePageBody.Name = "homePageBody";
+            this.homePageBody.Size = new System.Drawing.Size(978, 597);
+            this.homePageBody.TabIndex = 1;
             // 
             // Home_header
             // 
@@ -480,13 +480,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.Start_page);
             this.Controls.Add(this.LogIn_page);
-            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.SignUp_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.LogIn_page.ResumeLayout(false);
             this.LogIn_page.PerformLayout();
             this.SignUp_page.ResumeLayout(false);
@@ -523,7 +524,7 @@
         private System.Windows.Forms.Button doneFilter_btn;
         private System.Windows.Forms.Button reminderDateFilter_btn;
         private System.Windows.Forms.Button startDateFilter_btn;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.FlowLayoutPanel homePageBody;
         private System.Windows.Forms.Label addEvent_btn;
         private System.Windows.Forms.Button logOut_btn;
         private System.Windows.Forms.Panel Start_page;
