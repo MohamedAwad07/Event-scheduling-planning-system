@@ -16,7 +16,7 @@ namespace Event_scheduling_planning_system
     {
         int currentUserId;
         OracleConnection conn;
-        string ordb = "Data source  = orcl ; user id = event; password = 123";
+        public static string ordb = "Data source  = orcl ; user id = event; password = 123";
         public MainForm()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Event_scheduling_planning_system
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
-         
+
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
@@ -53,10 +53,11 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("Uname", username1_txb.Text.ToString());
             c.Parameters.Add("Upass", password1_txb.Text.ToString());
 
-            c.Parameters.Add("U_id", OracleDbType.Int32 , ParameterDirection.Output);
+            c.Parameters.Add("U_id", OracleDbType.Int32, ParameterDirection.Output);
 
 
-            try { 
+            try
+            {
 
                 c.ExecuteNonQuery();
                 //Console.WriteLine("Username :" + username1_txb.Text + " >>>   Pass : " + password1_txb.Text);
@@ -64,19 +65,20 @@ namespace Event_scheduling_planning_system
                 currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
 
                 DisplayHomePage();
-            
+
             }
-            catch {
+            catch
+            {
 
                 MessageBox.Show("Wrong Username or password");
             }
 
         }
-        public  int getUSerId()
+        public int getUSerId()
         {
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
-          
+
             c.CommandText = "getUserId";
             c.CommandType = CommandType.StoredProcedure;
 
@@ -94,8 +96,8 @@ namespace Event_scheduling_planning_system
             }
             catch
             {
-               currentUserId = 1;
-               return 1;
+                currentUserId = 1;
+                return 1;
             }
         }
         private void signUp_btn_Click(object sender, EventArgs e)
@@ -133,7 +135,7 @@ namespace Event_scheduling_planning_system
 
             if (r != -1)
             {
-               DisplayHomePage();
+                DisplayHomePage();
             }
             else
                 MessageBox.Show("Something went worng");
@@ -149,34 +151,33 @@ namespace Event_scheduling_planning_system
         #region HomePage
         private void addEvent_btn_Click(object sender, EventArgs e)
         {
-            //Application.Run(new AddEventForm());
-            //AddEventForm addEventForm = new AddEventForm();
-            //addEventForm.ShowDialog();
-            (new AddEventForm()).ShowDialog();
+            AddEventForm currEvent = new AddEventForm(currentUserId);
+            currEvent.ShowDialog();
+            if(currEvent.eventAdded) DisplayEventsByStartDate();
         }
 
         private void logOut_btn_Click(object sender, EventArgs e)
         {
+            homePageBody.Controls.Clear();
             LogIn_page.BringToFront();
         }
 
         public void DisplayEventsByStartDate()
         {
-
+            homePageBody.Controls.Clear();
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
-        
+
             c.CommandText = "displayEventsByStartDate";
             c.CommandType = CommandType.StoredProcedure;
 
-            c.Parameters.Add("currId" , currentUserId );
+            c.Parameters.Add("currId", currentUserId);
             c.Parameters.Add("Data", OracleDbType.RefCursor, ParameterDirection.Output);
 
             OracleDataReader dr = c.ExecuteReader();
 
             while (dr.Read())
             {
-                //Console.WriteLine("Name  : " + dr["EVENTNAME"]);
 
                 EventCard card = new EventCard(
                     dr["EVENTNAME"].ToString(),
@@ -185,7 +186,7 @@ namespace Event_scheduling_planning_system
                     dr["ENDDATETIME"].ToString(),
                     dr["REMINDERDATETIME"].ToString(),
                     dr["EVENTSTATUS"].ToString()
-                    ) ;
+                    );
                 homePageBody.Controls.Add(card);
             }
             dr.Close();

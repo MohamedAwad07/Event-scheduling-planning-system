@@ -16,7 +16,6 @@ namespace Event_scheduling_planning_system
     {
         public EventCard()
         {
-            //Console.WriteLine("Here");
             InitializeComponent();
         }
         public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status)
@@ -31,10 +30,8 @@ namespace Event_scheduling_planning_system
 
             string pattern = @"/([^/]*)/";
             MatchCollection matches = Regex.Matches(startDate, pattern);
-            if(matches[0].Groups[1].Value.Length < 2 )
-            {
-                dayNum_lbl.Text = "0";
-            }
+            if(matches[0].Groups[1].Value.Length < 2)  dayNum_lbl.Text = "0";
+           
             dayNum_lbl.Text += matches[0].Groups[1].Value;
 
             if (status == "Active")

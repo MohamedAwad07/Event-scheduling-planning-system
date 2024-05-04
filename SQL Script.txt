@@ -68,6 +68,13 @@ SELECT Max(USERID) INTO UID
 from USERS ;
 end ;
 
+create or replace PROCEDURE getEventId 
+(EID out NUMBER )
+as
+BEGIN
+SELECT Max(EVENTID) INTO EID
+from EVENTS ;
+end ;
 
 
 create or replace
@@ -82,3 +89,27 @@ where U_id = EVENTS.USERID
 Order by EVENTS.STARTDATETIME ;
 end;
 
+
+
+
+create or replace PROCEDURE CheckEventOverlap
+(
+    p_StartDateTime TIMESTAMP,
+    p_EndDateTime TIMESTAMP,
+    p_Overlap OUT NUMBER
+)
+AS
+    v_Count NUMBER := 0;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_Count
+    FROM EVENTS
+    WHERE p_enddatetime >= startdatetime
+    AND p_startdatetime <= enddatetime;
+
+    IF v_Count > 0 THEN
+        p_Overlap := 1; -- Overlap detected
+    ELSE
+        p_Overlap := 0; -- No overlap
+    END IF;
+END;
