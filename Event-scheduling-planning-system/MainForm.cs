@@ -194,6 +194,17 @@ namespace Event_scheduling_planning_system
         private void doneFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("filterDoneEvents");
+           
+        }
+
+        private void reminderDateFilter_btn_Click(object sender, EventArgs e)
+        {
+            DisplayEvents("filterByReminder");
+        }
+
+        private void startDateFilter_btn_Click(object sender, EventArgs e)
+        {
+            DisplayEvents("displayEventsByStartDate");
         }
     }
 }

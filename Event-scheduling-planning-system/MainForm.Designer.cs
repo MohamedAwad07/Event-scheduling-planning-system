@@ -457,6 +457,7 @@
             this.reminderDateFilter_btn.Size = new System.Drawing.Size(127, 42);
             this.reminderDateFilter_btn.TabIndex = 4;
             this.reminderDateFilter_btn.UseVisualStyleBackColor = false;
+            this.reminderDateFilter_btn.Click += new System.EventHandler(this.reminderDateFilter_btn_Click);
             // 
             // startDateFilter_btn
             // 
@@ -475,6 +476,7 @@
             this.startDateFilter_btn.Size = new System.Drawing.Size(135, 42);
             this.startDateFilter_btn.TabIndex = 7;
             this.startDateFilter_btn.UseVisualStyleBackColor = false;
+            this.startDateFilter_btn.Click += new System.EventHandler(this.startDateFilter_btn_Click);
             // 
             // homePageBody
             // 

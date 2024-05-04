@@ -102,7 +102,17 @@ where U_id = EVENTS.USERID and EVENTS.EVENTSTATUS = 'Active'
 Order by EVENTS.ENDDATETIME ;
 end;
 
-
+create or replace
+PROCEDURE filterByReminder
+(U_id  VARCHAR2 , cur out sys_refcursor)
+as
+begin
+open cur for
+select  *  
+from EVENTS 
+where U_id = EVENTS.USERID 
+Order by EVENTS.REMINDERDATETIME ;
+end;
 
 create or replace PROCEDURE CheckEventOverlap
 (
