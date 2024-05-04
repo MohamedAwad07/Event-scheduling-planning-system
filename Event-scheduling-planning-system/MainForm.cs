@@ -144,7 +144,7 @@ namespace Event_scheduling_planning_system
         {
             AddEventForm currEvent = new AddEventForm(currentUserId);
             currEvent.ShowDialog();
-            if(currEvent.eventAdded) DisplayEvents("displayEventsByStartDate");
+            if (currEvent.eventAdded) DisplayEvents("displayEventsByStartDate");
         }
 
         private void logOut_btn_Click(object sender, EventArgs e)
@@ -176,7 +176,9 @@ namespace Event_scheduling_planning_system
                     dr["STARTDATETIME"].ToString(),
                     dr["ENDDATETIME"].ToString(),
                     dr["REMINDERDATETIME"].ToString(),
-                    dr["EVENTSTATUS"].ToString()
+                    dr["EVENTSTATUS"].ToString(),
+                    conn,
+                    Convert.ToInt32(dr["EVENTID"].ToString())
                     );
                 homePageBody.Controls.Add(card);
             }
@@ -194,7 +196,6 @@ namespace Event_scheduling_planning_system
         private void doneFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("filterDoneEvents");
-           
         }
 
         private void reminderDateFilter_btn_Click(object sender, EventArgs e)
