@@ -423,8 +423,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
-            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.Login_page);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.Signup_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";

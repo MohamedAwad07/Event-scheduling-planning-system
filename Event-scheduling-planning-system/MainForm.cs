@@ -19,7 +19,9 @@ namespace Event_scheduling_planning_system
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
-
+            //Application.Run(new AddEventForm());
+            //AddEventForm addEventForm = new AddEventForm();
+            (new AddEventForm()).ShowDialog();
         }
 
         private void signUp_btn_Click(object sender, EventArgs e)
