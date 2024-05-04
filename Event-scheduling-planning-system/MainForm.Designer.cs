@@ -49,13 +49,13 @@
             this.signIn_btn = new System.Windows.Forms.Label();
             this.create_acc_btn = new System.Windows.Forms.Button();
             this.Home_page = new System.Windows.Forms.Panel();
-            this.homePageBody = new System.Windows.Forms.FlowLayoutPanel();
             this.Home_header = new System.Windows.Forms.Panel();
+            this.logOut_btn = new System.Windows.Forms.Button();
+            this.addEvent_btn = new System.Windows.Forms.Label();
             this.doneFilter_btn = new System.Windows.Forms.Button();
             this.reminderDateFilter_btn = new System.Windows.Forms.Button();
             this.startDateFilter_btn = new System.Windows.Forms.Button();
-            this.addEvent_btn = new System.Windows.Forms.Label();
-            this.logOut_btn = new System.Windows.Forms.Button();
+            this.homePageBody = new System.Windows.Forms.FlowLayoutPanel();
             this.Start_page = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.LogIn_page.SuspendLayout();
@@ -346,17 +346,6 @@
             this.Home_page.Size = new System.Drawing.Size(978, 744);
             this.Home_page.TabIndex = 7;
             // 
-            // homePageBody
-            // 
-            this.homePageBody.AutoScroll = true;
-            this.homePageBody.BackColor = System.Drawing.Color.White;
-            this.homePageBody.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.homePageBody.Location = new System.Drawing.Point(0, 147);
-            this.homePageBody.Margin = new System.Windows.Forms.Padding(0);
-            this.homePageBody.Name = "homePageBody";
-            this.homePageBody.Size = new System.Drawing.Size(978, 597);
-            this.homePageBody.TabIndex = 1;
-            // 
             // Home_header
             // 
             this.Home_header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home_header.BackgroundImage")));
@@ -372,6 +361,40 @@
             this.Home_header.Name = "Home_header";
             this.Home_header.Size = new System.Drawing.Size(978, 152);
             this.Home_header.TabIndex = 2;
+            // 
+            // logOut_btn
+            // 
+            this.logOut_btn.BackColor = System.Drawing.Color.Transparent;
+            this.logOut_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logOut_btn.BackgroundImage")));
+            this.logOut_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logOut_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOut_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatAppearance.BorderSize = 0;
+            this.logOut_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.logOut_btn.Location = new System.Drawing.Point(891, 0);
+            this.logOut_btn.Name = "logOut_btn";
+            this.logOut_btn.Size = new System.Drawing.Size(87, 39);
+            this.logOut_btn.TabIndex = 32;
+            this.logOut_btn.UseVisualStyleBackColor = false;
+            this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
+            // 
+            // addEvent_btn
+            // 
+            this.addEvent_btn.AutoSize = true;
+            this.addEvent_btn.BackColor = System.Drawing.Color.Transparent;
+            this.addEvent_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEvent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEvent_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.addEvent_btn.Location = new System.Drawing.Point(43, 38);
+            this.addEvent_btn.Name = "addEvent_btn";
+            this.addEvent_btn.Size = new System.Drawing.Size(76, 79);
+            this.addEvent_btn.TabIndex = 9;
+            this.addEvent_btn.Text = "+";
+            this.addEvent_btn.Click += new System.EventHandler(this.addEvent_btn_Click);
             // 
             // doneFilter_btn
             // 
@@ -424,39 +447,16 @@
             this.startDateFilter_btn.TabIndex = 7;
             this.startDateFilter_btn.UseVisualStyleBackColor = false;
             // 
-            // addEvent_btn
+            // homePageBody
             // 
-            this.addEvent_btn.AutoSize = true;
-            this.addEvent_btn.BackColor = System.Drawing.Color.Transparent;
-            this.addEvent_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEvent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEvent_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.addEvent_btn.Location = new System.Drawing.Point(43, 38);
-            this.addEvent_btn.Name = "addEvent_btn";
-            this.addEvent_btn.Size = new System.Drawing.Size(76, 79);
-            this.addEvent_btn.TabIndex = 9;
-            this.addEvent_btn.Text = "+";
-            this.addEvent_btn.Click += new System.EventHandler(this.addEvent_btn_Click);
-            // 
-            // logOut_btn
-            // 
-            this.logOut_btn.BackColor = System.Drawing.Color.Transparent;
-            this.logOut_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logOut_btn.BackgroundImage")));
-            this.logOut_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.logOut_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logOut_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
-            this.logOut_btn.FlatAppearance.BorderSize = 0;
-            this.logOut_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
-            this.logOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
-            this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.logOut_btn.Location = new System.Drawing.Point(891, 0);
-            this.logOut_btn.Name = "logOut_btn";
-            this.logOut_btn.Size = new System.Drawing.Size(87, 39);
-            this.logOut_btn.TabIndex = 32;
-            this.logOut_btn.UseVisualStyleBackColor = false;
-            this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
+            this.homePageBody.AutoScroll = true;
+            this.homePageBody.BackColor = System.Drawing.Color.White;
+            this.homePageBody.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.homePageBody.Location = new System.Drawing.Point(0, 147);
+            this.homePageBody.Margin = new System.Windows.Forms.Padding(0);
+            this.homePageBody.Name = "homePageBody";
+            this.homePageBody.Size = new System.Drawing.Size(978, 597);
+            this.homePageBody.TabIndex = 1;
             // 
             // Start_page
             // 
@@ -480,10 +480,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
-            this.Controls.Add(this.Home_page);
-            this.Controls.Add(this.Start_page);
-            this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.SignUp_page);
+            this.Controls.Add(this.LogIn_page);
+            this.Controls.Add(this.Start_page);
+            this.Controls.Add(this.Home_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";

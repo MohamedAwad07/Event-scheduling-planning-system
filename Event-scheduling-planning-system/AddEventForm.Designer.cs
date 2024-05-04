@@ -56,12 +56,12 @@
             // 
             this.end_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.end_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.end_DT.CustomFormat = "dd/MM/yyyy  hh:mm ##";
+            this.end_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
             this.end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.end_DT.Location = new System.Drawing.Point(18, 263);
             this.end_DT.Name = "end_DT";
-            this.end_DT.Size = new System.Drawing.Size(300, 37);
+            this.end_DT.Size = new System.Drawing.Size(309, 37);
             this.end_DT.TabIndex = 4;
             // 
             // label3
@@ -85,7 +85,7 @@
             this.saveEvent_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.saveEvent_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.saveEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveEvent_btn.Location = new System.Drawing.Point(167, 445);
+            this.saveEvent_btn.Location = new System.Drawing.Point(172, 445);
             this.saveEvent_btn.Name = "saveEvent_btn";
             this.saveEvent_btn.Size = new System.Drawing.Size(160, 60);
             this.saveEvent_btn.TabIndex = 25;
@@ -96,12 +96,12 @@
             // 
             this.reminder_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.reminder_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.reminder_DT.CustomFormat = "dd/MM/yyyy  hh:mm ##";
+            this.reminder_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
             this.reminder_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reminder_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.reminder_DT.Location = new System.Drawing.Point(18, 369);
             this.reminder_DT.Name = "reminder_DT";
-            this.reminder_DT.Size = new System.Drawing.Size(300, 37);
+            this.reminder_DT.Size = new System.Drawing.Size(309, 37);
             this.reminder_DT.TabIndex = 5;
             // 
             // label1
@@ -119,12 +119,12 @@
             // 
             this.start_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.start_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.start_DT.CustomFormat = "dd/MM/yyyy  hh:mm ##";
+            this.start_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
             this.start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.start_DT.Location = new System.Drawing.Point(18, 163);
             this.start_DT.Name = "start_DT";
-            this.start_DT.Size = new System.Drawing.Size(300, 37);
+            this.start_DT.Size = new System.Drawing.Size(309, 37);
             this.start_DT.TabIndex = 3;
             // 
             // label2
@@ -155,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(339, 517);
+            this.ClientSize = new System.Drawing.Size(344, 517);
             this.Controls.Add(this.eventName_txb);
             this.Controls.Add(this.eventLocation_txb);
             this.Controls.Add(this.saveEvent_btn);

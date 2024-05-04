@@ -16,5 +16,10 @@ namespace Event_scheduling_planning_system
         {
             InitializeComponent();
         }
+
+        private void EventCard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
