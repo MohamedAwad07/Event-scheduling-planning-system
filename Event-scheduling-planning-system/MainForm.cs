@@ -16,5 +16,25 @@ namespace Event_scheduling_planning_system
         {
             InitializeComponent();
         }
+
+        private void logIn_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signUp_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void create_acc_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signIn_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
