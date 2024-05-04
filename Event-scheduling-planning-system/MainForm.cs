@@ -60,16 +60,11 @@ namespace Event_scheduling_planning_system
             {
 
                 c.ExecuteNonQuery();
-                //Console.WriteLine("Username :" + username1_txb.Text + " >>>   Pass : " + password1_txb.Text);
-
                 currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
-
                 DisplayHomePage();
-
             }
             catch
             {
-
                 MessageBox.Show("Wrong Username or password");
             }
 
@@ -86,13 +81,9 @@ namespace Event_scheduling_planning_system
 
             try
             {
-
                 c.ExecuteNonQuery();
-                //Console.WriteLine("Username :" + username1_txb.Text + " >>>   Pass : " + password1_txb.Text);
-
                 currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString()) + 1;
                 return currentUserId;
-
             }
             catch
             {
@@ -153,7 +144,7 @@ namespace Event_scheduling_planning_system
         {
             AddEventForm currEvent = new AddEventForm(currentUserId);
             currEvent.ShowDialog();
-            if(currEvent.eventAdded) DisplayEventsByStartDate();
+            if(currEvent.eventAdded) DisplayEvents("displayEventsByStartDate");
         }
 
         private void logOut_btn_Click(object sender, EventArgs e)
@@ -162,13 +153,13 @@ namespace Event_scheduling_planning_system
             LogIn_page.BringToFront();
         }
 
-        public void DisplayEventsByStartDate()
+        public void DisplayEvents(string procedureName)
         {
             homePageBody.Controls.Clear();
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
-            c.CommandText = "displayEventsByStartDate";
+            c.CommandText = procedureName;
             c.CommandType = CommandType.StoredProcedure;
 
             c.Parameters.Add("currId", currentUserId);
@@ -194,11 +185,15 @@ namespace Event_scheduling_planning_system
 
         public void DisplayHomePage()
         {
-            DisplayEventsByStartDate();
+            DisplayEvents("displayEventsByStartDate");
             Home_page.BringToFront();
         }
 
         #endregion
 
+        private void doneFilter_btn_Click(object sender, EventArgs e)
+        {
+            DisplayEvents("filterDoneEvents");
+        }
     }
 }

@@ -90,6 +90,18 @@ Order by EVENTS.STARTDATETIME ;
 end;
 
 
+create or replace
+PROCEDURE filterDoneEvents
+(U_id  VARCHAR2 , cur out sys_refcursor)
+as
+begin
+open cur for
+select  *  
+from EVENTS 
+where U_id = EVENTS.USERID and EVENTS.EVENTSTATUS = 'Active'
+Order by EVENTS.ENDDATETIME ;
+end;
+
 
 
 create or replace PROCEDURE CheckEventOverlap

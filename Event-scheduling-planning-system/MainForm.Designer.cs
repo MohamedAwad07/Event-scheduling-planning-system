@@ -88,6 +88,7 @@
             this.eye_open1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eye_open1.CausesValidation = false;
             this.eye_open1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.eye_open1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.eye_open1.FlatAppearance.BorderSize = 0;
             this.eye_open1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -163,6 +164,7 @@
             // 
             this.logIn_btn.BackColor = System.Drawing.Color.Transparent;
             this.logIn_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logIn_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.logIn_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.logIn_btn.FlatAppearance.BorderSize = 0;
             this.logIn_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -204,6 +206,7 @@
             this.eye_open3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eye_open3.CausesValidation = false;
             this.eye_open3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.eye_open3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.eye_open3.FlatAppearance.BorderSize = 0;
             this.eye_open3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -242,6 +245,7 @@
             this.eye_open2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.eye_open2.CausesValidation = false;
             this.eye_open2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.eye_open2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.eye_open2.FlatAppearance.BorderSize = 0;
             this.eye_open2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -387,6 +391,7 @@
             this.logOut_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logOut_btn.BackgroundImage")));
             this.logOut_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.logOut_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOut_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.logOut_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
             this.logOut_btn.FlatAppearance.BorderSize = 0;
             this.logOut_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
@@ -433,12 +438,14 @@
             this.doneFilter_btn.Size = new System.Drawing.Size(71, 42);
             this.doneFilter_btn.TabIndex = 8;
             this.doneFilter_btn.UseVisualStyleBackColor = false;
+            this.doneFilter_btn.Click += new System.EventHandler(this.doneFilter_btn_Click);
             // 
             // reminderDateFilter_btn
             // 
             this.reminderDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
             this.reminderDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reminderDateFilter_btn.BackgroundImage")));
             this.reminderDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reminderDateFilter_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.reminderDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatAppearance.BorderSize = 0;
             this.reminderDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -456,6 +463,7 @@
             this.startDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
             this.startDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("startDateFilter_btn.BackgroundImage")));
             this.startDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.startDateFilter_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.startDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatAppearance.BorderSize = 0;
             this.startDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -501,15 +509,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
-            this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.Home_page);
+            this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.Start_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
