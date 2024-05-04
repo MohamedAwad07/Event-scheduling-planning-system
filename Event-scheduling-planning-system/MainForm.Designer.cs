@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.Login_page = new System.Windows.Forms.Panel();
+            this.LogIn_page = new System.Windows.Forms.Panel();
             this.eye_open1 = new System.Windows.Forms.Button();
             this.eye_close1 = new System.Windows.Forms.Button();
             this.signUp_btn = new System.Windows.Forms.Label();
             this.password1_txb = new System.Windows.Forms.TextBox();
             this.username1_txb = new System.Windows.Forms.TextBox();
             this.logIn_btn = new System.Windows.Forms.Button();
-            this.Signup_page = new System.Windows.Forms.Panel();
+            this.SignUp_page = new System.Windows.Forms.Panel();
             this.eye_open3 = new System.Windows.Forms.Button();
             this.eye_close3 = new System.Windows.Forms.Button();
             this.eye_open2 = new System.Windows.Forms.Button();
@@ -53,27 +54,31 @@
             this.doneFilter_btn = new System.Windows.Forms.Button();
             this.reminderDateFilter_btn = new System.Windows.Forms.Button();
             this.startDateFilter_btn = new System.Windows.Forms.Button();
-            this.Login_page.SuspendLayout();
-            this.Signup_page.SuspendLayout();
+            this.addEvent_btn = new System.Windows.Forms.Label();
+            this.logOut_btn = new System.Windows.Forms.Button();
+            this.Start_page = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.LogIn_page.SuspendLayout();
+            this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
             this.Home_header.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Login_page
+            // LogIn_page
             // 
-            this.Login_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Login_page.BackgroundImage")));
-            this.Login_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Login_page.Controls.Add(this.eye_open1);
-            this.Login_page.Controls.Add(this.eye_close1);
-            this.Login_page.Controls.Add(this.signUp_btn);
-            this.Login_page.Controls.Add(this.password1_txb);
-            this.Login_page.Controls.Add(this.username1_txb);
-            this.Login_page.Controls.Add(this.logIn_btn);
-            this.Login_page.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Login_page.Location = new System.Drawing.Point(0, 0);
-            this.Login_page.Name = "Login_page";
-            this.Login_page.Size = new System.Drawing.Size(978, 744);
-            this.Login_page.TabIndex = 33;
+            this.LogIn_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn_page.BackgroundImage")));
+            this.LogIn_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogIn_page.Controls.Add(this.eye_open1);
+            this.LogIn_page.Controls.Add(this.eye_close1);
+            this.LogIn_page.Controls.Add(this.signUp_btn);
+            this.LogIn_page.Controls.Add(this.password1_txb);
+            this.LogIn_page.Controls.Add(this.username1_txb);
+            this.LogIn_page.Controls.Add(this.logIn_btn);
+            this.LogIn_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogIn_page.Location = new System.Drawing.Point(0, 0);
+            this.LogIn_page.Name = "LogIn_page";
+            this.LogIn_page.Size = new System.Drawing.Size(978, 744);
+            this.LogIn_page.TabIndex = 33;
             // 
             // eye_open1
             // 
@@ -121,9 +126,9 @@
             this.signUp_btn.ForeColor = System.Drawing.SystemColors.Control;
             this.signUp_btn.Location = new System.Drawing.Point(538, 569);
             this.signUp_btn.Name = "signUp_btn";
-            this.signUp_btn.Size = new System.Drawing.Size(86, 26);
+            this.signUp_btn.Size = new System.Drawing.Size(97, 26);
             this.signUp_btn.TabIndex = 3;
-            this.signUp_btn.Text = "Signup";
+            this.signUp_btn.Text = "Sign Up";
             this.signUp_btn.Click += new System.EventHandler(this.signUp_btn_Click);
             // 
             // password1_txb
@@ -164,25 +169,25 @@
             this.logIn_btn.UseVisualStyleBackColor = false;
             this.logIn_btn.Click += new System.EventHandler(this.logIn_btn_Click);
             // 
-            // Signup_page
+            // SignUp_page
             // 
-            this.Signup_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Signup_page.BackgroundImage")));
-            this.Signup_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Signup_page.Controls.Add(this.eye_open3);
-            this.Signup_page.Controls.Add(this.eye_close3);
-            this.Signup_page.Controls.Add(this.eye_open2);
-            this.Signup_page.Controls.Add(this.eye_close2);
-            this.Signup_page.Controls.Add(this.confirm_pass_txb);
-            this.Signup_page.Controls.Add(this.email_txb);
-            this.Signup_page.Controls.Add(this.username2_txb);
-            this.Signup_page.Controls.Add(this.password2_txb);
-            this.Signup_page.Controls.Add(this.signIn_btn);
-            this.Signup_page.Controls.Add(this.create_acc_btn);
-            this.Signup_page.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Signup_page.Location = new System.Drawing.Point(0, 0);
-            this.Signup_page.Name = "Signup_page";
-            this.Signup_page.Size = new System.Drawing.Size(978, 744);
-            this.Signup_page.TabIndex = 34;
+            this.SignUp_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SignUp_page.BackgroundImage")));
+            this.SignUp_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SignUp_page.Controls.Add(this.eye_open3);
+            this.SignUp_page.Controls.Add(this.eye_close3);
+            this.SignUp_page.Controls.Add(this.eye_open2);
+            this.SignUp_page.Controls.Add(this.eye_close2);
+            this.SignUp_page.Controls.Add(this.confirm_pass_txb);
+            this.SignUp_page.Controls.Add(this.email_txb);
+            this.SignUp_page.Controls.Add(this.username2_txb);
+            this.SignUp_page.Controls.Add(this.password2_txb);
+            this.SignUp_page.Controls.Add(this.signIn_btn);
+            this.SignUp_page.Controls.Add(this.create_acc_btn);
+            this.SignUp_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SignUp_page.Location = new System.Drawing.Point(0, 0);
+            this.SignUp_page.Name = "SignUp_page";
+            this.SignUp_page.Size = new System.Drawing.Size(978, 744);
+            this.SignUp_page.TabIndex = 34;
             // 
             // eye_open3
             // 
@@ -356,6 +361,8 @@
             // 
             this.Home_header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home_header.BackgroundImage")));
             this.Home_header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Home_header.Controls.Add(this.logOut_btn);
+            this.Home_header.Controls.Add(this.addEvent_btn);
             this.Home_header.Controls.Add(this.doneFilter_btn);
             this.Home_header.Controls.Add(this.reminderDateFilter_btn);
             this.Home_header.Controls.Add(this.startDateFilter_btn);
@@ -376,7 +383,7 @@
             this.doneFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.doneFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.doneFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doneFilter_btn.Location = new System.Drawing.Point(756, 46);
+            this.doneFilter_btn.Location = new System.Drawing.Point(713, 46);
             this.doneFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.doneFilter_btn.Name = "doneFilter_btn";
             this.doneFilter_btn.Size = new System.Drawing.Size(107, 65);
@@ -393,7 +400,7 @@
             this.reminderDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reminderDateFilter_btn.Location = new System.Drawing.Point(487, 46);
+            this.reminderDateFilter_btn.Location = new System.Drawing.Point(444, 46);
             this.reminderDateFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reminderDateFilter_btn.Name = "reminderDateFilter_btn";
             this.reminderDateFilter_btn.Size = new System.Drawing.Size(191, 65);
@@ -410,12 +417,62 @@
             this.startDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startDateFilter_btn.Location = new System.Drawing.Point(214, 46);
+            this.startDateFilter_btn.Location = new System.Drawing.Point(171, 46);
             this.startDateFilter_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.startDateFilter_btn.Name = "startDateFilter_btn";
             this.startDateFilter_btn.Size = new System.Drawing.Size(202, 65);
             this.startDateFilter_btn.TabIndex = 7;
             this.startDateFilter_btn.UseVisualStyleBackColor = false;
+            // 
+            // addEvent_btn
+            // 
+            this.addEvent_btn.AutoSize = true;
+            this.addEvent_btn.BackColor = System.Drawing.Color.Transparent;
+            this.addEvent_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEvent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEvent_btn.ForeColor = System.Drawing.SystemColors.Control;
+            this.addEvent_btn.Location = new System.Drawing.Point(43, 38);
+            this.addEvent_btn.Name = "addEvent_btn";
+            this.addEvent_btn.Size = new System.Drawing.Size(76, 79);
+            this.addEvent_btn.TabIndex = 9;
+            this.addEvent_btn.Text = "+";
+            this.addEvent_btn.Click += new System.EventHandler(this.addEvent_btn_Click);
+            // 
+            // logOut_btn
+            // 
+            this.logOut_btn.BackColor = System.Drawing.Color.Transparent;
+            this.logOut_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logOut_btn.BackgroundImage")));
+            this.logOut_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.logOut_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOut_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatAppearance.BorderSize = 0;
+            this.logOut_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
+            this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.logOut_btn.Location = new System.Drawing.Point(891, 0);
+            this.logOut_btn.Name = "logOut_btn";
+            this.logOut_btn.Size = new System.Drawing.Size(87, 39);
+            this.logOut_btn.TabIndex = 32;
+            this.logOut_btn.UseVisualStyleBackColor = false;
+            this.logOut_btn.Click += new System.EventHandler(this.logOut_btn_Click);
+            // 
+            // Start_page
+            // 
+            this.Start_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Start_page.BackgroundImage")));
+            this.Start_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Start_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Start_page.Location = new System.Drawing.Point(0, 0);
+            this.Start_page.Name = "Start_page";
+            this.Start_page.Size = new System.Drawing.Size(978, 744);
+            this.Start_page.TabIndex = 35;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MainForm
             // 
@@ -423,31 +480,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(978, 744);
-            this.Controls.Add(this.Login_page);
+            this.Controls.Add(this.Start_page);
+            this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.Home_page);
-            this.Controls.Add(this.Signup_page);
+            this.Controls.Add(this.SignUp_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.Login_page.ResumeLayout(false);
-            this.Login_page.PerformLayout();
-            this.Signup_page.ResumeLayout(false);
-            this.Signup_page.PerformLayout();
+            this.LogIn_page.ResumeLayout(false);
+            this.LogIn_page.PerformLayout();
+            this.SignUp_page.ResumeLayout(false);
+            this.SignUp_page.PerformLayout();
             this.Home_page.ResumeLayout(false);
             this.Home_header.ResumeLayout(false);
+            this.Home_header.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel Login_page;
+        private System.Windows.Forms.Panel LogIn_page;
         private System.Windows.Forms.Button eye_open1;
         private System.Windows.Forms.Label signUp_btn;
         private System.Windows.Forms.TextBox password1_txb;
         private System.Windows.Forms.TextBox username1_txb;
         private System.Windows.Forms.Button logIn_btn;
-        private System.Windows.Forms.Panel Signup_page;
+        private System.Windows.Forms.Panel SignUp_page;
         private System.Windows.Forms.Button eye_open3;
         private System.Windows.Forms.Button eye_close3;
         private System.Windows.Forms.Button eye_open2;
@@ -465,6 +524,10 @@
         private System.Windows.Forms.Button reminderDateFilter_btn;
         private System.Windows.Forms.Button startDateFilter_btn;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label addEvent_btn;
+        private System.Windows.Forms.Button logOut_btn;
+        private System.Windows.Forms.Panel Start_page;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
