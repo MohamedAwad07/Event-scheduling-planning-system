@@ -47,7 +47,7 @@ commit;
 
 
 
-// Procedures
+
 create or replace
 PROCEDURE Login
 (Uname  VARCHAR2 ,  Upass VARCHAR2 , U_id out NUMBER)
@@ -114,8 +114,10 @@ where U_id = EVENTS.USERID
 Order by EVENTS.REMINDERDATETIME ;
 end;
 
-create or replace PROCEDURE CheckEventOverlap
+create or replace
+PROCEDURE CheckEventOverlap
 (
+    p_userid NUMBER,
     p_StartDateTime TIMESTAMP,
     p_EndDateTime TIMESTAMP,
     p_Overlap OUT NUMBER
@@ -127,7 +129,8 @@ BEGIN
     INTO v_Count
     FROM EVENTS
     WHERE p_enddatetime >= startdatetime
-    AND p_startdatetime <= enddatetime;
+    AND p_startdatetime <= enddatetime
+    AND p_userid = userid;
 
     IF v_Count > 0 THEN
         p_Overlap := 1; -- Overlap detected
