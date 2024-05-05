@@ -67,6 +67,8 @@
             this.admin_end_DT = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -79,6 +81,7 @@
             // 
             this.LogIn_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn_page.BackgroundImage")));
             this.LogIn_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogIn_page.Controls.Add(this.button1);
             this.LogIn_page.Controls.Add(this.eye_open1);
             this.LogIn_page.Controls.Add(this.eye_close1);
             this.LogIn_page.Controls.Add(this.signUp_btn);
@@ -181,7 +184,7 @@
             this.logIn_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.logIn_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.logIn_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logIn_btn.Location = new System.Drawing.Point(235, 318);
+            this.logIn_btn.Location = new System.Drawing.Point(235, 316);
             this.logIn_btn.Margin = new System.Windows.Forms.Padding(2);
             this.logIn_btn.Name = "logIn_btn";
             this.logIn_btn.Size = new System.Drawing.Size(185, 37);
@@ -409,7 +412,7 @@
             this.logOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
             this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.logOut_btn.Location = new System.Drawing.Point(594, 0);
+            this.logOut_btn.Location = new System.Drawing.Point(592, 11);
             this.logOut_btn.Margin = new System.Windows.Forms.Padding(2);
             this.logOut_btn.Name = "logOut_btn";
             this.logOut_btn.Size = new System.Drawing.Size(58, 25);
@@ -520,6 +523,7 @@
             // admin_page
             // 
             this.admin_page.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.admin_page.Controls.Add(this.button2);
             this.admin_page.Controls.Add(this.admin_save_btn);
             this.admin_page.Controls.Add(this.admin_search_btn);
             this.admin_page.Controls.Add(this.admin_label);
@@ -535,7 +539,7 @@
             // 
             // admin_save_btn
             // 
-            this.admin_save_btn.Location = new System.Drawing.Point(543, 56);
+            this.admin_save_btn.Location = new System.Drawing.Point(543, 47);
             this.admin_save_btn.Name = "admin_save_btn";
             this.admin_save_btn.Size = new System.Drawing.Size(75, 23);
             this.admin_save_btn.TabIndex = 29;
@@ -545,7 +549,7 @@
             // 
             // admin_search_btn
             // 
-            this.admin_search_btn.Location = new System.Drawing.Point(543, 27);
+            this.admin_search_btn.Location = new System.Drawing.Point(543, 18);
             this.admin_search_btn.Name = "admin_search_btn";
             this.admin_search_btn.Size = new System.Drawing.Size(75, 23);
             this.admin_search_btn.TabIndex = 28;
@@ -558,7 +562,7 @@
             this.admin_label.AutoSize = true;
             this.admin_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.admin_label.Location = new System.Drawing.Point(32, 25);
+            this.admin_label.Location = new System.Drawing.Point(32, 16);
             this.admin_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.admin_label.Name = "admin_label";
             this.admin_label.Size = new System.Drawing.Size(82, 17);
@@ -570,7 +574,7 @@
             this.admin_label2.AutoSize = true;
             this.admin_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.admin_label2.Location = new System.Drawing.Point(280, 25);
+            this.admin_label2.Location = new System.Drawing.Point(280, 16);
             this.admin_label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.admin_label2.Name = "admin_label2";
             this.admin_label2.Size = new System.Drawing.Size(75, 17);
@@ -584,7 +588,7 @@
             this.admin_start_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
             this.admin_start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.admin_start_DT.Location = new System.Drawing.Point(35, 44);
+            this.admin_start_DT.Location = new System.Drawing.Point(35, 35);
             this.admin_start_DT.Margin = new System.Windows.Forms.Padding(2);
             this.admin_start_DT.Name = "admin_start_DT";
             this.admin_start_DT.Size = new System.Drawing.Size(176, 23);
@@ -597,7 +601,7 @@
             this.admin_end_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
             this.admin_end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.admin_end_DT.Location = new System.Drawing.Point(283, 44);
+            this.admin_end_DT.Location = new System.Drawing.Point(283, 35);
             this.admin_end_DT.Margin = new System.Windows.Forms.Padding(2);
             this.admin_end_DT.Name = "admin_end_DT";
             this.admin_end_DT.Size = new System.Drawing.Size(176, 23);
@@ -611,7 +615,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.Color.YellowGreen;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 95);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 84);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(583, 364);
             this.dataGridView1.TabIndex = 0;
@@ -622,6 +626,26 @@
             this.timer2.Interval = 10000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Login as admin";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(547, 454);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,8 +654,8 @@
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
             this.Controls.Add(this.admin_page);
-            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.LogIn_page);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.Start_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -694,6 +718,8 @@
         private System.Windows.Forms.Button admin_save_btn;
         private System.Windows.Forms.Button admin_search_btn;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

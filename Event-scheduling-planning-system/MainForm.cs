@@ -304,5 +304,15 @@ namespace Event_scheduling_planning_system
                 Console.WriteLine("ERRRRRRRRRRRRRROR");
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            admin_page.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LogIn_page.BringToFront();
+        }
     }
 }
