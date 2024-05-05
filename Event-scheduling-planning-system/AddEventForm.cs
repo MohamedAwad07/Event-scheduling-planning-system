@@ -184,7 +184,7 @@ namespace Event_scheduling_planning_system
 
             bool ovelapping = checkOverlapping(startdate, enddate);
 
-            if (ovelapping == false)
+            if (ovelapping == true)
             {
                 MessageBox.Show("selected date is overlapping with another date");
                 return false;
@@ -203,6 +203,7 @@ namespace Event_scheduling_planning_system
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "CheckEventOverlap";
 
+            cmd.Parameters.Add("p_userid", userId);
             cmd.Parameters.Add("p_StartDateTime", startDateTime);
             cmd.Parameters.Add("p_EndDateTime", endDateTime);
             cmd.Parameters.Add("p_Overlap", OracleDbType.Int32, ParameterDirection.Output);
@@ -218,7 +219,7 @@ namespace Event_scheduling_planning_system
                 return false;
             }
 
-
+            Console.WriteLine($"number of overlaps = {is_overlapping}");
             return (is_overlapping > 0);
         }
 
