@@ -48,7 +48,7 @@
             this.eventName_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventName_txb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.eventName_txb.Location = new System.Drawing.Point(18, 9);
-            this.eventName_txb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eventName_txb.Margin = new System.Windows.Forms.Padding(2);
             this.eventName_txb.Name = "eventName_txb";
             this.eventName_txb.Size = new System.Drawing.Size(190, 23);
             this.eventName_txb.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.end_DT.Location = new System.Drawing.Point(12, 171);
-            this.end_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.end_DT.Margin = new System.Windows.Forms.Padding(2);
             this.end_DT.Name = "end_DT";
             this.end_DT.Size = new System.Drawing.Size(206, 23);
             this.end_DT.TabIndex = 4;
@@ -90,7 +90,7 @@
             this.saveEvent_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.saveEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveEvent_btn.Location = new System.Drawing.Point(116, 289);
-            this.saveEvent_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveEvent_btn.Margin = new System.Windows.Forms.Padding(2);
             this.saveEvent_btn.Name = "saveEvent_btn";
             this.saveEvent_btn.Size = new System.Drawing.Size(106, 39);
             this.saveEvent_btn.TabIndex = 25;
@@ -105,7 +105,7 @@
             this.reminder_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reminder_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.reminder_DT.Location = new System.Drawing.Point(12, 241);
-            this.reminder_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reminder_DT.Margin = new System.Windows.Forms.Padding(2);
             this.reminder_DT.Name = "reminder_DT";
             this.reminder_DT.Size = new System.Drawing.Size(206, 23);
             this.reminder_DT.TabIndex = 5;
@@ -130,7 +130,7 @@
             this.start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.start_DT.Location = new System.Drawing.Point(12, 106);
-            this.start_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.start_DT.Margin = new System.Windows.Forms.Padding(2);
             this.start_DT.Name = "start_DT";
             this.start_DT.Size = new System.Drawing.Size(206, 23);
             this.start_DT.TabIndex = 3;
@@ -154,7 +154,7 @@
             this.eventLocation_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventLocation_txb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.eventLocation_txb.Location = new System.Drawing.Point(18, 43);
-            this.eventLocation_txb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eventLocation_txb.Margin = new System.Windows.Forms.Padding(2);
             this.eventLocation_txb.Name = "eventLocation_txb";
             this.eventLocation_txb.Size = new System.Drawing.Size(190, 23);
             this.eventLocation_txb.TabIndex = 2;
@@ -169,7 +169,6 @@
             this.done_checkbox.TabIndex = 26;
             this.done_checkbox.Text = "Done";
             this.done_checkbox.UseVisualStyleBackColor = true;
-     
             // 
             // AddEventForm
             // 
@@ -188,7 +187,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.end_DT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "AddEventForm";
             this.Text = "Add Event";

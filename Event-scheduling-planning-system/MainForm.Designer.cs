@@ -58,10 +58,20 @@
             this.homePageBody = new System.Windows.Forms.FlowLayoutPanel();
             this.Start_page = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.admin_page = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.admin_start_DT = new System.Windows.Forms.DateTimePicker();
+            this.admin_end_DT = new System.Windows.Forms.DateTimePicker();
+            this.admin_label = new System.Windows.Forms.Label();
+            this.admin_label2 = new System.Windows.Forms.Label();
+            this.admin_search_btn = new System.Windows.Forms.Button();
+            this.admin_save_btn = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
             this.Home_header.SuspendLayout();
+            this.admin_page.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // LogIn_page
@@ -506,6 +516,107 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // admin_page
+            // 
+            this.admin_page.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.admin_page.Controls.Add(this.admin_save_btn);
+            this.admin_page.Controls.Add(this.admin_search_btn);
+            this.admin_page.Controls.Add(this.admin_label);
+            this.admin_page.Controls.Add(this.admin_label2);
+            this.admin_page.Controls.Add(this.admin_start_DT);
+            this.admin_page.Controls.Add(this.admin_end_DT);
+            this.admin_page.Controls.Add(this.dataGridView1);
+            this.admin_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.admin_page.Location = new System.Drawing.Point(0, 0);
+            this.admin_page.Name = "admin_page";
+            this.admin_page.Size = new System.Drawing.Size(652, 484);
+            this.admin_page.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.GridColor = System.Drawing.Color.YellowGreen;
+            this.dataGridView1.Location = new System.Drawing.Point(35, 95);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(583, 364);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // admin_start_DT
+            // 
+            this.admin_start_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.admin_start_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
+            this.admin_start_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
+            this.admin_start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.admin_start_DT.Location = new System.Drawing.Point(35, 44);
+            this.admin_start_DT.Margin = new System.Windows.Forms.Padding(2);
+            this.admin_start_DT.Name = "admin_start_DT";
+            this.admin_start_DT.Size = new System.Drawing.Size(176, 23);
+            this.admin_start_DT.TabIndex = 5;
+            // 
+            // admin_end_DT
+            // 
+            this.admin_end_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.admin_end_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
+            this.admin_end_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
+            this.admin_end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.admin_end_DT.Location = new System.Drawing.Point(283, 44);
+            this.admin_end_DT.Margin = new System.Windows.Forms.Padding(2);
+            this.admin_end_DT.Name = "admin_end_DT";
+            this.admin_end_DT.Size = new System.Drawing.Size(176, 23);
+            this.admin_end_DT.TabIndex = 6;
+            // 
+            // admin_label
+            // 
+            this.admin_label.AutoSize = true;
+            this.admin_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_label.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.admin_label.Location = new System.Drawing.Point(32, 25);
+            this.admin_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.admin_label.Name = "admin_label";
+            this.admin_label.Size = new System.Drawing.Size(82, 17);
+            this.admin_label.TabIndex = 7;
+            this.admin_label.Text = "Start Date";
+            this.admin_label.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // admin_label2
+            // 
+            this.admin_label2.AutoSize = true;
+            this.admin_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.admin_label2.Location = new System.Drawing.Point(280, 25);
+            this.admin_label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.admin_label2.Name = "admin_label2";
+            this.admin_label2.Size = new System.Drawing.Size(75, 17);
+            this.admin_label2.TabIndex = 8;
+            this.admin_label2.Text = "End Date";
+            this.admin_label2.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // admin_search_btn
+            // 
+            this.admin_search_btn.Location = new System.Drawing.Point(543, 27);
+            this.admin_search_btn.Name = "admin_search_btn";
+            this.admin_search_btn.Size = new System.Drawing.Size(75, 23);
+            this.admin_search_btn.TabIndex = 28;
+            this.admin_search_btn.Text = "Search";
+            this.admin_search_btn.UseVisualStyleBackColor = true;
+            this.admin_search_btn.Click += new System.EventHandler(this.admin_search_btn_Click);
+            // 
+            // admin_save_btn
+            // 
+            this.admin_save_btn.Location = new System.Drawing.Point(543, 56);
+            this.admin_save_btn.Name = "admin_save_btn";
+            this.admin_save_btn.Size = new System.Drawing.Size(75, 23);
+            this.admin_save_btn.TabIndex = 29;
+            this.admin_save_btn.Text = "Save";
+            this.admin_save_btn.UseVisualStyleBackColor = true;
+            this.admin_save_btn.Click += new System.EventHandler(this.admin_save_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,6 +624,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
+            this.Controls.Add(this.admin_page);
             this.Controls.Add(this.Home_page);
             this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.SignUp_page);
@@ -531,6 +643,9 @@
             this.Home_page.ResumeLayout(false);
             this.Home_header.ResumeLayout(false);
             this.Home_header.PerformLayout();
+            this.admin_page.ResumeLayout(false);
+            this.admin_page.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,6 +680,14 @@
         private System.Windows.Forms.Button logOut_btn;
         private System.Windows.Forms.Panel Start_page;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel admin_page;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker admin_start_DT;
+        private System.Windows.Forms.DateTimePicker admin_end_DT;
+        private System.Windows.Forms.Label admin_label;
+        private System.Windows.Forms.Label admin_label2;
+        private System.Windows.Forms.Button admin_save_btn;
+        private System.Windows.Forms.Button admin_search_btn;
     }
 }
 

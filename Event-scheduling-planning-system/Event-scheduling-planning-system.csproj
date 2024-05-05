@@ -59,6 +59,7 @@
     <Compile Include="AddEventForm.Designer.cs">
       <DependentUpon>AddEventForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin.cs" />
     <Compile Include="EditEventForm.cs">
       <SubType>Form</SubType>
     </Compile>

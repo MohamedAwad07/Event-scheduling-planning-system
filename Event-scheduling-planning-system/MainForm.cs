@@ -4,11 +4,15 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.Remoting;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Event_scheduling_planning_system
 {
@@ -16,6 +20,9 @@ namespace Event_scheduling_planning_system
     {
         int currentUserId;
         OracleConnection conn;
+        OracleDataAdapter adapter;
+        OracleCommandBuilder command;
+        DataSet ds;
         public static string ordb = "Data source  = orcl ; user id = event; password = 123";
         public MainForm()
         {
@@ -43,6 +50,11 @@ namespace Event_scheduling_planning_system
 
         private void logIn_btn_Click(object sender, EventArgs e)
         {
+            if(username1_txb.Text == "Admin" && password1_txb.Text == "123")
+            {
+                admin_page.BringToFront();
+                return;
+            }
 
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
@@ -55,10 +67,8 @@ namespace Event_scheduling_planning_system
 
             c.Parameters.Add("U_id", OracleDbType.Int32, ParameterDirection.Output);
 
-
             try
             {
-
                 c.ExecuteNonQuery();
                 currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
                 DisplayHomePage();
@@ -107,7 +117,14 @@ namespace Event_scheduling_planning_system
                 MessageBox.Show("Password does not match");
                 return;
             }
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
+            if (!Regex.IsMatch(email_txb.Text, pattern))
+            {
+                MessageBox.Show("Invalid email format");
+                return;
+            }
+            
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
@@ -116,13 +133,36 @@ namespace Event_scheduling_planning_system
 
 
             int nextId = getUSerId();
+            if(email_txb.Text.ToString() == "")
+            {
+                MessageBox.Show("Email can not be empty !");
+                return;
+            }
+            else if (username2_txb.Text.ToString() == "")
+            {
+                MessageBox.Show("Username can not be empty !");
+                return;
+            }
+            else if(password2_txb.Text.ToString() == "")
+            {
+                MessageBox.Show("Password can not be empty !");
+                return;
+            }
 
             c.Parameters.Add("Id", nextId);
             c.Parameters.Add("Username", username2_txb.Text.ToString());
             c.Parameters.Add("Email", email_txb.Text.ToString());
             c.Parameters.Add("password", password2_txb.Text.ToString());
-
-            int r = c.ExecuteNonQuery();
+            int r;
+            try
+            {
+                 r = c.ExecuteNonQuery();
+            }
+            catch
+            {
+                MessageBox.Show("Email already exist , try anohter one");
+                return;
+            }
 
             if (r != -1)
             {
@@ -206,6 +246,50 @@ namespace Event_scheduling_planning_system
         private void startDateFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("displayEventsByStartDate");
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void admin_search_btn_Click(object sender, EventArgs e)
+        {
+
+            if (admin_start_DT.Value > admin_end_DT.Value)
+            {
+                MessageBox.Show("selected date is not valid");
+                return;
+            }
+            string cmdstr = @"SELECT   
+                              USERID , EVENTNAME , EVENTLOCATION ,  STARTDATETIME , ENDDATETIME  , EVENTID
+                              FROM EVENTS 
+                              WHERE 
+                              STARTDATETIME >= :startDate AND
+                              ENDDATETIME <= :endDate
+                                ";
+
+            adapter = new OracleDataAdapter(cmdstr, MainForm.ordb);
+            adapter.SelectCommand.Parameters.Add("startDate", admin_start_DT.Value);
+            adapter.SelectCommand.Parameters.Add("endDate", admin_end_DT.Value);
+
+            ds = new DataSet();
+
+            adapter.Fill(ds);
+            ds.Tables[0].PrimaryKey = new DataColumn[] { ds.Tables[0].Columns["EVENTID"] };
+            dataGridView1.DataSource = ds.Tables[0];
+            dataGridView1.Columns[5].Visible = false;
+        }
+
+        private void admin_save_btn_Click(object sender, EventArgs e)
+        {
+            command = new OracleCommandBuilder(adapter);
+            adapter.Update(ds.Tables[0]);
         }
     }
 }
