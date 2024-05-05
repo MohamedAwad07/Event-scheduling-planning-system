@@ -47,7 +47,7 @@ namespace Event_scheduling_planning_system
             this.status = status;
             this.conn = conn;
             this.eventId = eventId;
-            if(status == "Active")
+            if(status == "done")
             {
                 done_pic.Visible = true;
             }

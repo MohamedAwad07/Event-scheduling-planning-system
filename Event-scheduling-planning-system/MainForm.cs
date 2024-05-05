@@ -231,8 +231,6 @@ namespace Event_scheduling_planning_system
             Home_page.BringToFront();
         }
 
-        #endregion
-
         private void doneFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("filterDoneEvents");
@@ -248,16 +246,10 @@ namespace Event_scheduling_planning_system
             DisplayEvents("displayEventsByStartDate");
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
+        #endregion
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Admin page
         private void admin_search_btn_Click(object sender, EventArgs e)
         {
 
@@ -290,6 +282,27 @@ namespace Event_scheduling_planning_system
         {
             command = new OracleCommandBuilder(adapter);
             adapter.Update(ds.Tables[0]);
+        }
+
+        #endregion
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            OracleCommand c = new OracleCommand();
+            c.Connection = conn;
+
+            c.CommandText = "UPDATE EVENTS SET EventStatus = 'done' WHERE EndDateTime <= SYSDATE AND EVENTSTATUS = 'new' ";
+            c.CommandType = CommandType.Text;
+
+            int r =  c.ExecuteNonQuery();
+
+            if(r != -1)
+            {
+                Console.WriteLine("no of affected rows : " + r);
+            }
+            else
+                Console.WriteLine("ERRRRRRRRRRRRRROR");
+
         }
     }
 }

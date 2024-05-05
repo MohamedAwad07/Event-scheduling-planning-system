@@ -58,7 +58,7 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("startdate", start_DT.Value);
             c.Parameters.Add("enddate", end_DT.Value);
             c.Parameters.Add("reminder", reminder_DT.Value);
-            c.Parameters.Add("status", "Inactive");
+            c.Parameters.Add("status", "new");
 
             int r = c.ExecuteNonQuery();
             if (r != -1)

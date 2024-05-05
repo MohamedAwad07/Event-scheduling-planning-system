@@ -34,6 +34,7 @@ namespace Event_scheduling_planning_system
             InitializeComponent();
             this.userId = userId;
             this.conn = conn;
+            done_checkbox.Visible = false;
         }
 
         public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, OracleConnection conn, int eventId)
@@ -44,7 +45,7 @@ namespace Event_scheduling_planning_system
             start_DT.Text = startDate;
             end_DT.Text = endDate;
             reminder_DT.Text = reminderDate;
-            done_checkbox.Checked = status == "Active" ? true : false;
+            done_checkbox.Checked = status == "done" ? true : false;
             this.conn = conn;
             this.eventId = eventId;
             editMode = true;
@@ -59,7 +60,7 @@ namespace Event_scheduling_planning_system
             {
                 edit();
                 return;
-            }
+            }   
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
@@ -76,7 +77,7 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("enddate", enddate);
             c.Parameters.Add("reminderDate", reminderTime);
             c.Parameters.Add("eventLocation", eventLocation_txb.Text.ToString());
-            c.Parameters.Add("status", "Inactive");
+            c.Parameters.Add("status", "new");
             c.Parameters.Add("userId", userId);
 
 
@@ -120,7 +121,7 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("startdate", startdate);
             c.Parameters.Add("enddate", enddate);
             c.Parameters.Add("reminder", reminderTime);
-            c.Parameters.Add("status", done_checkbox.Checked ? "Active" : "Inactive");
+            c.Parameters.Add("status", done_checkbox.Checked ? "done" : "new");
             c.Parameters.Add("id", eventId);
 
 
