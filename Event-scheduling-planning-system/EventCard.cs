@@ -47,9 +47,12 @@ namespace Event_scheduling_planning_system
             this.status = status;
             this.conn = conn;
             this.eventId = eventId;
+            if(status == "Active")
+            {
+                done_pic.Visible = true;
+            }
 
-
-            Console.WriteLine("Id" + eventId);
+            //Console.WriteLine("Id" + eventId);
             string pattern = @"/([^/]*)/";
             MatchCollection matches = Regex.Matches(startDate, pattern);
             if(matches[0].Groups[1].Value.Length < 2)  dayNum_lbl.Text = "0";

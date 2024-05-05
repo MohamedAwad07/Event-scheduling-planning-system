@@ -41,7 +41,9 @@
             this.endDate_lbl = new System.Windows.Forms.Label();
             this.reminderDate_lbl = new System.Windows.Forms.Label();
             this.eventLocation_lbl = new System.Windows.Forms.Label();
+            this.done_pic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dayNum_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.done_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // dayNum_pic
@@ -193,12 +195,24 @@
             this.eventLocation_lbl.TabIndex = 7;
             this.eventLocation_lbl.Text = "South Ain Shams";
             // 
+            // done_pic
+            // 
+            this.done_pic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("done_pic.BackgroundImage")));
+            this.done_pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.done_pic.Location = new System.Drawing.Point(521, -10);
+            this.done_pic.Name = "done_pic";
+            this.done_pic.Size = new System.Drawing.Size(90, 90);
+            this.done_pic.TabIndex = 8;
+            this.done_pic.TabStop = false;
+            this.done_pic.Visible = false;
+            // 
             // EventCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.done_pic);
             this.Controls.Add(this.reminderDate_lbl);
             this.Controls.Add(this.endDate_lbl);
             this.Controls.Add(this.eventLocation_lbl);
@@ -215,6 +229,7 @@
             this.Name = "EventCard";
             this.Size = new System.Drawing.Size(600, 130);
             ((System.ComponentModel.ISupportInitialize)(this.dayNum_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.done_pic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +249,6 @@
         private System.Windows.Forms.Label endDate_lbl;
         private System.Windows.Forms.Label reminderDate_lbl;
         private System.Windows.Forms.Label eventLocation_lbl;
+        private System.Windows.Forms.PictureBox done_pic;
     }
 }
