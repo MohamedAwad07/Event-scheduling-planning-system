@@ -16,6 +16,12 @@ namespace Event_scheduling_planning_system
     public partial class EventCard : UserControl
     {
         OracleConnection conn;
+        string name;
+        string location;
+        string startDate;
+        string endDate;
+        string reminderDate;
+        string status;
         int eventId;
         public EventCard()
         {
@@ -30,6 +36,15 @@ namespace Event_scheduling_planning_system
             endDate_lbl.Text = endDate;
             reminderDate_lbl.Text = reminderDate;
             dayNum_lbl.Text = "";
+
+
+
+            this.name = name;
+            this.location = location;
+            this.startDate = startDate;
+            this.endDate = endDate;
+            this.reminderDate = reminderDate;
+            this.status = status;
             this.conn = conn;
             this.eventId = eventId;
 
@@ -41,14 +56,6 @@ namespace Event_scheduling_planning_system
            
             dayNum_lbl.Text += matches[0].Groups[1].Value;
 
-            if (status == "Active")
-            {
-
-            }
-            else
-            {
-
-            }
         }
 
         private void deleteEvent_btn_Click(object sender, EventArgs e)
@@ -70,6 +77,11 @@ namespace Event_scheduling_planning_system
             else
                 MessageBox.Show("Something went wrong");
 
+        }
+
+        private void editEvent_btn_Click(object sender, EventArgs e)
+        { 
+           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, conn, eventId)).ShowDialog();
         }
     }
 }

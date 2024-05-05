@@ -24,14 +24,30 @@ namespace Event_scheduling_planning_system
         DateTime enddate;
         DateTime reminderTime;
         public bool eventAdded = false;
+        bool editMode = false;
         public AddEventForm()
         {
             InitializeComponent();
         }
-        public AddEventForm(int userId)
+        public AddEventForm(int userId, OracleConnection conn)
         {
             InitializeComponent();
             this.userId = userId;
+            this.conn = conn;
+        }
+
+        public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, OracleConnection conn, int eventId)
+        {
+            InitializeComponent();
+            eventName_txb.Text = name;
+            eventLocation_txb.Text = location;
+            start_DT.Text = startDate;
+            end_DT.Text = endDate;
+            reminder_DT.Text = reminderDate;
+            done_checkbox.Checked = status == "Active" ? true : false;
+            this.conn = conn;
+            this.eventId = eventId;
+            editMode = true;
         }
 
         private void saveEvent_btn_Click(object sender, EventArgs e)
@@ -39,7 +55,11 @@ namespace Event_scheduling_planning_system
 
             if (validateDate() == false) return;
 
-
+            if(editMode)
+            {
+                edit();
+                return;
+            }
             OracleCommand c = new OracleCommand();
             c.Connection = conn;
 
@@ -72,6 +92,48 @@ namespace Event_scheduling_planning_system
                 MessageBox.Show("Something went worng");
 
 
+        }
+
+        private void edit()
+        {
+            OracleCommand c = new OracleCommand();
+            c.Connection = conn;
+
+
+            c.CommandType = CommandType.Text;
+            c.CommandText =
+                @"
+                    UPDATE EVENTS SET
+                    EVENTNAME = :name ,
+                    EVENTLOCATION = :loc ,
+                    STARTDATETIME =  :startdate ,
+                    ENDDATETIME =  :enddate ,
+                    REMINDERDATETIME = :reminder,
+                    EVENTSTATUS = :status 
+                    WHERE EVENTID = :id
+                ";
+
+
+
+            c.Parameters.Add("name", eventName_txb.Text);
+            c.Parameters.Add("loc", eventLocation_txb.Text);
+            c.Parameters.Add("startdate", startdate);
+            c.Parameters.Add("enddate", enddate);
+            c.Parameters.Add("reminder", reminderTime);
+            c.Parameters.Add("status", done_checkbox.Checked ? "Active" : "Inactive");
+            c.Parameters.Add("id", eventId);
+
+
+
+            int r = c.ExecuteNonQuery();
+            if (r != -1)
+            {
+                MessageBox.Show("Event updated successfully");
+
+                this.Close();
+            }
+            else
+                MessageBox.Show("Something went worng");
         }
 
         public void getEventId()
@@ -162,13 +224,12 @@ namespace Event_scheduling_planning_system
 
         private void AddEventForm_Load(object sender, EventArgs e)
         {
-            conn = new OracleConnection(MainForm.ordb);
-            conn.Open();
+          
         }
 
         private void AddEventForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            conn.Dispose();
+            //conn.Dispose();
         }
     }
 }

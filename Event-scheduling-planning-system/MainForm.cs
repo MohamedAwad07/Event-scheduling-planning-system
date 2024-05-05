@@ -142,7 +142,7 @@ namespace Event_scheduling_planning_system
         #region HomePage
         private void addEvent_btn_Click(object sender, EventArgs e)
         {
-            AddEventForm currEvent = new AddEventForm(currentUserId);
+            AddEventForm currEvent = new AddEventForm(currentUserId , conn);
             currEvent.ShowDialog();
             if (currEvent.eventAdded) DisplayEvents("displayEventsByStartDate");
         }

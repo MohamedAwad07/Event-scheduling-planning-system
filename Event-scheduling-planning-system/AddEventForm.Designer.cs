@@ -38,18 +38,19 @@
             this.start_DT = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.eventLocation_txb = new System.Windows.Forms.TextBox();
+            this.done_checkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // eventName_txb
             // 
             this.eventName_txb.BackColor = System.Drawing.Color.White;
             this.eventName_txb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.eventName_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventName_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventName_txb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.eventName_txb.Location = new System.Drawing.Point(18, 8);
-            this.eventName_txb.Margin = new System.Windows.Forms.Padding(2);
+            this.eventName_txb.Location = new System.Drawing.Point(18, 9);
+            this.eventName_txb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.eventName_txb.Name = "eventName_txb";
-            this.eventName_txb.Size = new System.Drawing.Size(189, 27);
+            this.eventName_txb.Size = new System.Drawing.Size(190, 23);
             this.eventName_txb.TabIndex = 0;
             this.eventName_txb.Text = "Event Name";
             // 
@@ -58,23 +59,23 @@
             this.end_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.end_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.end_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
-            this.end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.end_DT.Location = new System.Drawing.Point(12, 171);
-            this.end_DT.Margin = new System.Windows.Forms.Padding(2);
+            this.end_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.end_DT.Name = "end_DT";
-            this.end_DT.Size = new System.Drawing.Size(207, 27);
+            this.end_DT.Size = new System.Drawing.Size(206, 23);
             this.end_DT.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(9, 150);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "End Date";
             // 
@@ -88,10 +89,10 @@
             this.saveEvent_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.saveEvent_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.saveEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveEvent_btn.Location = new System.Drawing.Point(115, 289);
-            this.saveEvent_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.saveEvent_btn.Location = new System.Drawing.Point(116, 289);
+            this.saveEvent_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.saveEvent_btn.Name = "saveEvent_btn";
-            this.saveEvent_btn.Size = new System.Drawing.Size(107, 39);
+            this.saveEvent_btn.Size = new System.Drawing.Size(106, 39);
             this.saveEvent_btn.TabIndex = 25;
             this.saveEvent_btn.UseVisualStyleBackColor = true;
             this.saveEvent_btn.Click += new System.EventHandler(this.saveEvent_btn_Click);
@@ -101,23 +102,23 @@
             this.reminder_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.reminder_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.reminder_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
-            this.reminder_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reminder_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reminder_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.reminder_DT.Location = new System.Drawing.Point(12, 240);
-            this.reminder_DT.Margin = new System.Windows.Forms.Padding(2);
+            this.reminder_DT.Location = new System.Drawing.Point(12, 241);
+            this.reminder_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reminder_DT.Name = "reminder_DT";
-            this.reminder_DT.Size = new System.Drawing.Size(207, 27);
+            this.reminder_DT.Size = new System.Drawing.Size(206, 23);
             this.reminder_DT.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(9, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
+            this.label1.Size = new System.Drawing.Size(116, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Reminder Date";
             // 
@@ -126,23 +127,23 @@
             this.start_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.start_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.start_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
-            this.start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.start_DT.Location = new System.Drawing.Point(12, 106);
-            this.start_DT.Margin = new System.Windows.Forms.Padding(2);
+            this.start_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.start_DT.Name = "start_DT";
-            this.start_DT.Size = new System.Drawing.Size(207, 27);
+            this.start_DT.Size = new System.Drawing.Size(206, 23);
             this.start_DT.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(9, 85);
+            this.label2.Location = new System.Drawing.Point(9, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Start Date";
             // 
@@ -150,21 +151,33 @@
             // 
             this.eventLocation_txb.BackColor = System.Drawing.Color.White;
             this.eventLocation_txb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.eventLocation_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLocation_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventLocation_txb.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.eventLocation_txb.Location = new System.Drawing.Point(18, 43);
-            this.eventLocation_txb.Margin = new System.Windows.Forms.Padding(2);
+            this.eventLocation_txb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.eventLocation_txb.Name = "eventLocation_txb";
-            this.eventLocation_txb.Size = new System.Drawing.Size(189, 27);
+            this.eventLocation_txb.Size = new System.Drawing.Size(190, 23);
             this.eventLocation_txb.TabIndex = 2;
             this.eventLocation_txb.Text = "Event Location";
+            // 
+            // done_checkbox
+            // 
+            this.done_checkbox.AutoSize = true;
+            this.done_checkbox.Location = new System.Drawing.Point(18, 289);
+            this.done_checkbox.Name = "done_checkbox";
+            this.done_checkbox.Size = new System.Drawing.Size(52, 17);
+            this.done_checkbox.TabIndex = 26;
+            this.done_checkbox.Text = "Done";
+            this.done_checkbox.UseVisualStyleBackColor = true;
+     
             // 
             // AddEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(229, 336);
+            this.ClientSize = new System.Drawing.Size(230, 336);
+            this.Controls.Add(this.done_checkbox);
             this.Controls.Add(this.eventName_txb);
             this.Controls.Add(this.eventLocation_txb);
             this.Controls.Add(this.saveEvent_btn);
@@ -175,9 +188,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.end_DT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "AddEventForm";
             this.Text = "Add Event";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEventForm_FormClosing);
@@ -197,5 +209,6 @@
         private System.Windows.Forms.DateTimePicker start_DT;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox eventLocation_txb;
+        private System.Windows.Forms.CheckBox done_checkbox;
     }
 }

@@ -83,6 +83,7 @@
             this.editEvent_btn.Size = new System.Drawing.Size(26, 25);
             this.editEvent_btn.TabIndex = 5;
             this.editEvent_btn.UseVisualStyleBackColor = false;
+            this.editEvent_btn.Click += new System.EventHandler(this.editEvent_btn_Click);
             // 
             // deleteEvent_btn
             // 
