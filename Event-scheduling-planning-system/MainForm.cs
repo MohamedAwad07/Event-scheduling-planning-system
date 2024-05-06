@@ -341,9 +341,9 @@ namespace Event_scheduling_planning_system
         {
             deleteTextWhenTap(email_txb , "Email" , true);
 
-            //deleteTextWhenTap(username2_txb , "Username" , false);
-            //deleteTextWhenTap(password2_txb , "Password" , false);
-            //deleteTextWhenTap(confirm_pass_txb , "Confirm Password" , false);
+            deleteTextWhenTap(username2_txb , username2_txb.Text , false);
+            deleteTextWhenTap(password2_txb , password2_txb.Text, false);
+            deleteTextWhenTap(confirm_pass_txb , confirm_pass_txb.Text, false);
 
         }
 
@@ -351,40 +351,40 @@ namespace Event_scheduling_planning_system
         {
             deleteTextWhenTap(username2_txb , "Username" , true);
 
-            //deleteTextWhenTap(email_txb, "Email", false);
-            //deleteTextWhenTap(password2_txb, "Password", false);
-            //deleteTextWhenTap(confirm_pass_txb, "Confirm Password", false);
+            deleteTextWhenTap(email_txb, email_txb.Text, false);
+            deleteTextWhenTap(password2_txb, password2_txb.Text, false);
+            deleteTextWhenTap(confirm_pass_txb, confirm_pass_txb.Text, false);
         }
 
         private void password2_txb_Click(object sender, EventArgs e)
         {
             deleteTextWhenTap(password2_txb , "Password" , true);
 
-            //deleteTextWhenTap(email_txb, "Email", false);
-            //deleteTextWhenTap(username2_txb, "Username", false);
-            //deleteTextWhenTap(confirm_pass_txb, "Confirm Password", false);
+            deleteTextWhenTap(email_txb, email_txb.Text, false);
+            deleteTextWhenTap(username2_txb, username2_txb.Text, false);
+            deleteTextWhenTap(confirm_pass_txb, confirm_pass_txb.Text, false);
         }
 
         private void confirm_pass_txb_Click(object sender, EventArgs e)
         {
             deleteTextWhenTap(confirm_pass_txb , "Confirm Password" , true);
 
-            //deleteTextWhenTap(email_txb, "Email", false);
-            //deleteTextWhenTap(password2_txb, "Password", false);
-            //deleteTextWhenTap(username2_txb, "Username", false);
+            deleteTextWhenTap(email_txb, email_txb.Text, false);
+            deleteTextWhenTap(password2_txb, password2_txb.Text, false);
+            deleteTextWhenTap(username2_txb, username2_txb.Text, false);
         }
 
         //Login
         private void username1_txb_Click(object sender, EventArgs e)
         {
             deleteTextWhenTap(username1_txb, "Username", true);
-            //deleteTextWhenTap(password1_txb, "123", false);
+            deleteTextWhenTap(password1_txb, password1_txb.Text, false);
         }
 
         private void password1_txb_Click(object sender, EventArgs e)
         {
             deleteTextWhenTap(password1_txb, "123", true);
-            //deleteTextWhenTap(username1_txb, "Username", false);
+            deleteTextWhenTap(username1_txb, username1_txb.Text, false);
         }
 
         private void eye_close1_Click(object sender, EventArgs e)
