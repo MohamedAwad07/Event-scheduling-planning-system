@@ -23,11 +23,14 @@ namespace Event_scheduling_planning_system
         string reminderDate;
         string status;
         int eventId;
+
+        FlowLayoutPanel homePageBody;
+        int currentUserId;
         public EventCard()
         {
             InitializeComponent();
         }
-        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, OracleConnection conn , int eventId)
+        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, OracleConnection conn , int eventId , FlowLayoutPanel homePageBody,int currentUserId)
         {
             InitializeComponent();
             eventName_lbl.Text = name;
@@ -38,7 +41,8 @@ namespace Event_scheduling_planning_system
             dayNum_lbl.Text = "";
 
 
-
+            this.homePageBody = homePageBody;
+            this.currentUserId = currentUserId;
             this.name = name;
             this.location = location;
             this.startDate = startDate;
@@ -84,7 +88,7 @@ namespace Event_scheduling_planning_system
 
         private void editEvent_btn_Click(object sender, EventArgs e)
         { 
-           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, conn, eventId)).ShowDialog();
+           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, conn, eventId , homePageBody , currentUserId)).ShowDialog();
         }
     }
 }

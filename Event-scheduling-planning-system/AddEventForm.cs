@@ -25,6 +25,9 @@ namespace Event_scheduling_planning_system
         DateTime reminderTime;
         public bool eventAdded = false;
         bool editMode = false;
+
+        FlowLayoutPanel homePageBody;
+        int currentUserId;
         public AddEventForm()
         {
             InitializeComponent();
@@ -37,7 +40,7 @@ namespace Event_scheduling_planning_system
             done_checkbox.Visible = false;
         }
 
-        public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, OracleConnection conn, int eventId)
+        public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, OracleConnection conn, int eventId, FlowLayoutPanel homePageBody , int currUserId)
         {
             InitializeComponent();
             eventName_txb.Text = name;
@@ -49,6 +52,8 @@ namespace Event_scheduling_planning_system
             this.conn = conn;
             this.eventId = eventId;
             editMode = true;
+            this.homePageBody = homePageBody;
+            this.currentUserId = currUserId;
         }
 
         private void saveEvent_btn_Click(object sender, EventArgs e)
@@ -94,7 +99,39 @@ namespace Event_scheduling_planning_system
 
 
         }
+        public void DisplayEvents(string procedureName)
+        {
+            homePageBody.Controls.Clear();
+            OracleCommand c = new OracleCommand();
+            c.Connection = conn;
 
+            c.CommandText = procedureName;
+            c.CommandType = CommandType.StoredProcedure;
+
+            c.Parameters.Add("currId", currentUserId);
+            c.Parameters.Add("Data", OracleDbType.RefCursor, ParameterDirection.Output);
+
+            OracleDataReader dr = c.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                EventCard card = new EventCard(
+                    dr["EVENTNAME"].ToString(),
+                    dr["EVENTLOCATION"].ToString(),
+                    dr["STARTDATETIME"].ToString(),
+                    dr["ENDDATETIME"].ToString(),
+                    dr["REMINDERDATETIME"].ToString(),
+                    dr["EVENTSTATUS"].ToString(),
+                    conn,
+                    Convert.ToInt32(dr["EVENTID"].ToString()),
+                    homePageBody,
+                    currentUserId
+                    );
+                homePageBody.Controls.Add(card);
+            }
+            dr.Close();
+        }
         private void edit()
         {
             OracleCommand c = new OracleCommand();
@@ -130,8 +167,8 @@ namespace Event_scheduling_planning_system
             if (r != -1)
             {
                 MessageBox.Show("Event updated successfully");
-
                 this.Close();
+                DisplayEvents("displayEventsByStartDate");
             }
             else
                 MessageBox.Show("Something went worng");
