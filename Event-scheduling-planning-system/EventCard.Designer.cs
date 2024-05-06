@@ -42,6 +42,7 @@
             this.reminderDate_lbl = new System.Windows.Forms.Label();
             this.eventLocation_lbl = new System.Windows.Forms.Label();
             this.done_pic = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dayNum_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.done_pic)).BeginInit();
             this.SuspendLayout();
@@ -206,12 +207,25 @@
             this.done_pic.TabStop = false;
             this.done_pic.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(148)))), ((int)(((byte)(227)))));
+            this.label3.Location = new System.Drawing.Point(110, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "From";
+            // 
             // EventCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.done_pic);
             this.Controls.Add(this.reminderDate_lbl);
             this.Controls.Add(this.endDate_lbl);
@@ -250,5 +264,6 @@
         private System.Windows.Forms.Label reminderDate_lbl;
         private System.Windows.Forms.Label eventLocation_lbl;
         private System.Windows.Forms.PictureBox done_pic;
+        public System.Windows.Forms.Label label3;
     }
 }

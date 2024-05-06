@@ -163,9 +163,12 @@
             // done_checkbox
             // 
             this.done_checkbox.AutoSize = true;
-            this.done_checkbox.Location = new System.Drawing.Point(18, 289);
+            this.done_checkbox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.done_checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.done_checkbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.done_checkbox.Location = new System.Drawing.Point(18, 294);
             this.done_checkbox.Name = "done_checkbox";
-            this.done_checkbox.Size = new System.Drawing.Size(52, 17);
+            this.done_checkbox.Size = new System.Drawing.Size(60, 19);
             this.done_checkbox.TabIndex = 26;
             this.done_checkbox.Text = "Done";
             this.done_checkbox.UseVisualStyleBackColor = true;

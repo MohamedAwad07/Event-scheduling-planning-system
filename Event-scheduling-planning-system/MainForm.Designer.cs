@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LogIn_page = new System.Windows.Forms.Panel();
-            this.eye_open1 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.eye_close1 = new System.Windows.Forms.Button();
             this.signUp_btn = new System.Windows.Forms.Label();
             this.password1_txb = new System.Windows.Forms.TextBox();
             this.username1_txb = new System.Windows.Forms.TextBox();
             this.logIn_btn = new System.Windows.Forms.Button();
+            this.eye_open1 = new System.Windows.Forms.Button();
             this.SignUp_page = new System.Windows.Forms.Panel();
             this.eye_open3 = new System.Windows.Forms.Button();
             this.eye_close3 = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.Start_page = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.admin_page = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.admin_save_btn = new System.Windows.Forms.Button();
             this.admin_search_btn = new System.Windows.Forms.Button();
             this.admin_label = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.admin_end_DT = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -82,12 +82,12 @@
             this.LogIn_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn_page.BackgroundImage")));
             this.LogIn_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LogIn_page.Controls.Add(this.button1);
-            this.LogIn_page.Controls.Add(this.eye_open1);
             this.LogIn_page.Controls.Add(this.eye_close1);
             this.LogIn_page.Controls.Add(this.signUp_btn);
             this.LogIn_page.Controls.Add(this.password1_txb);
             this.LogIn_page.Controls.Add(this.username1_txb);
             this.LogIn_page.Controls.Add(this.logIn_btn);
+            this.LogIn_page.Controls.Add(this.eye_open1);
             this.LogIn_page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LogIn_page.Location = new System.Drawing.Point(0, 0);
             this.LogIn_page.Margin = new System.Windows.Forms.Padding(2);
@@ -95,25 +95,16 @@
             this.LogIn_page.Size = new System.Drawing.Size(652, 484);
             this.LogIn_page.TabIndex = 33;
             // 
-            // eye_open1
+            // button1
             // 
-            this.eye_open1.BackColor = System.Drawing.Color.Transparent;
-            this.eye_open1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open1.BackgroundImage")));
-            this.eye_open1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_open1.CausesValidation = false;
-            this.eye_open1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_open1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.eye_open1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_open1.FlatAppearance.BorderSize = 0;
-            this.eye_open1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_open1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_open1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_open1.Location = new System.Drawing.Point(436, 261);
-            this.eye_open1.Margin = new System.Windows.Forms.Padding(2);
-            this.eye_open1.Name = "eye_open1";
-            this.eye_open1.Size = new System.Drawing.Size(23, 23);
-            this.eye_open1.TabIndex = 4;
-            this.eye_open1.UseVisualStyleBackColor = false;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(35, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Login as admin";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // eye_close1
             // 
@@ -127,12 +118,13 @@
             this.eye_close1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.eye_close1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.eye_close1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close1.Location = new System.Drawing.Point(436, 261);
+            this.eye_close1.Location = new System.Drawing.Point(435, 262);
             this.eye_close1.Margin = new System.Windows.Forms.Padding(2);
             this.eye_close1.Name = "eye_close1";
             this.eye_close1.Size = new System.Drawing.Size(23, 23);
             this.eye_close1.TabIndex = 6;
             this.eye_close1.UseVisualStyleBackColor = false;
+            this.eye_close1.Click += new System.EventHandler(this.eye_close1_Click);
             // 
             // signUp_btn
             // 
@@ -142,7 +134,7 @@
             this.signUp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUp_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUp_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.signUp_btn.Location = new System.Drawing.Point(359, 370);
+            this.signUp_btn.Location = new System.Drawing.Point(359, 368);
             this.signUp_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.signUp_btn.Name = "signUp_btn";
             this.signUp_btn.Size = new System.Drawing.Size(67, 18);
@@ -153,26 +145,32 @@
             // password1_txb
             // 
             this.password1_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password1_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password1_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password1_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.password1_txb.Location = new System.Drawing.Point(192, 263);
+            this.password1_txb.Location = new System.Drawing.Point(193, 262);
             this.password1_txb.Margin = new System.Windows.Forms.Padding(2);
             this.password1_txb.Name = "password1_txb";
-            this.password1_txb.Size = new System.Drawing.Size(244, 22);
+            this.password1_txb.Size = new System.Drawing.Size(244, 19);
             this.password1_txb.TabIndex = 2;
             this.password1_txb.Text = "123";
+            this.password1_txb.UseSystemPasswordChar = true;
+            this.password1_txb.Click += new System.EventHandler(this.password1_txb_Click);
             // 
             // username1_txb
             // 
             this.username1_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username1_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username1_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username1_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.username1_txb.Location = new System.Drawing.Point(192, 198);
+            this.username1_txb.Location = new System.Drawing.Point(192, 199);
             this.username1_txb.Margin = new System.Windows.Forms.Padding(2);
+            this.username1_txb.MaximumSize = new System.Drawing.Size(267, 25);
+            this.username1_txb.MinimumSize = new System.Drawing.Size(267, 25);
+            this.username1_txb.Multiline = true;
             this.username1_txb.Name = "username1_txb";
-            this.username1_txb.Size = new System.Drawing.Size(267, 22);
+            this.username1_txb.Size = new System.Drawing.Size(267, 25);
             this.username1_txb.TabIndex = 1;
-            this.username1_txb.Text = "Manga";
+            this.username1_txb.Text = "Username";
+            this.username1_txb.Click += new System.EventHandler(this.username1_txb_Click);
             // 
             // logIn_btn
             // 
@@ -192,20 +190,41 @@
             this.logIn_btn.UseVisualStyleBackColor = false;
             this.logIn_btn.Click += new System.EventHandler(this.logIn_btn_Click);
             // 
+            // eye_open1
+            // 
+            this.eye_open1.BackColor = System.Drawing.Color.Transparent;
+            this.eye_open1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open1.BackgroundImage")));
+            this.eye_open1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_open1.CausesValidation = false;
+            this.eye_open1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.eye_open1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_open1.FlatAppearance.BorderSize = 0;
+            this.eye_open1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_open1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_open1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_open1.Location = new System.Drawing.Point(435, 261);
+            this.eye_open1.Margin = new System.Windows.Forms.Padding(2);
+            this.eye_open1.Name = "eye_open1";
+            this.eye_open1.Size = new System.Drawing.Size(23, 23);
+            this.eye_open1.TabIndex = 4;
+            this.eye_open1.UseVisualStyleBackColor = false;
+            this.eye_open1.Click += new System.EventHandler(this.eye_open1_Click_1);
+            // 
             // SignUp_page
             // 
             this.SignUp_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SignUp_page.BackgroundImage")));
             this.SignUp_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.SignUp_page.Controls.Add(this.eye_open3);
-            this.SignUp_page.Controls.Add(this.eye_close3);
-            this.SignUp_page.Controls.Add(this.eye_open2);
-            this.SignUp_page.Controls.Add(this.eye_close2);
-            this.SignUp_page.Controls.Add(this.confirm_pass_txb);
             this.SignUp_page.Controls.Add(this.email_txb);
             this.SignUp_page.Controls.Add(this.username2_txb);
             this.SignUp_page.Controls.Add(this.password2_txb);
             this.SignUp_page.Controls.Add(this.signIn_btn);
             this.SignUp_page.Controls.Add(this.create_acc_btn);
+            this.SignUp_page.Controls.Add(this.eye_open2);
+            this.SignUp_page.Controls.Add(this.eye_close2);
+            this.SignUp_page.Controls.Add(this.confirm_pass_txb);
+            this.SignUp_page.Controls.Add(this.eye_open3);
+            this.SignUp_page.Controls.Add(this.eye_close3);
             this.SignUp_page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SignUp_page.Location = new System.Drawing.Point(0, 0);
             this.SignUp_page.Margin = new System.Windows.Forms.Padding(2);
@@ -232,6 +251,7 @@
             this.eye_open3.Size = new System.Drawing.Size(23, 23);
             this.eye_open3.TabIndex = 9;
             this.eye_open3.UseVisualStyleBackColor = false;
+            this.eye_open3.Click += new System.EventHandler(this.eye_open3_Click);
             // 
             // eye_close3
             // 
@@ -245,12 +265,13 @@
             this.eye_close3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.eye_close3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.eye_close3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close3.Location = new System.Drawing.Point(425, 308);
+            this.eye_close3.Location = new System.Drawing.Point(424, 308);
             this.eye_close3.Margin = new System.Windows.Forms.Padding(2);
             this.eye_close3.Name = "eye_close3";
             this.eye_close3.Size = new System.Drawing.Size(23, 23);
             this.eye_close3.TabIndex = 10;
             this.eye_close3.UseVisualStyleBackColor = false;
+            this.eye_close3.Click += new System.EventHandler(this.eye_close3_Click);
             // 
             // eye_open2
             // 
@@ -271,6 +292,7 @@
             this.eye_open2.Size = new System.Drawing.Size(23, 23);
             this.eye_open2.TabIndex = 7;
             this.eye_open2.UseVisualStyleBackColor = false;
+            this.eye_open2.Click += new System.EventHandler(this.eye_open2_Click);
             // 
             // eye_close2
             // 
@@ -284,60 +306,66 @@
             this.eye_close2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.eye_close2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.eye_close2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close2.Location = new System.Drawing.Point(425, 256);
+            this.eye_close2.Location = new System.Drawing.Point(424, 257);
             this.eye_close2.Margin = new System.Windows.Forms.Padding(2);
             this.eye_close2.Name = "eye_close2";
             this.eye_close2.Size = new System.Drawing.Size(23, 23);
             this.eye_close2.TabIndex = 8;
             this.eye_close2.UseVisualStyleBackColor = false;
+            this.eye_close2.Click += new System.EventHandler(this.eye_close2_Click);
             // 
             // confirm_pass_txb
             // 
             this.confirm_pass_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirm_pass_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm_pass_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirm_pass_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.confirm_pass_txb.Location = new System.Drawing.Point(195, 308);
+            this.confirm_pass_txb.Location = new System.Drawing.Point(195, 309);
             this.confirm_pass_txb.Margin = new System.Windows.Forms.Padding(2);
             this.confirm_pass_txb.Name = "confirm_pass_txb";
-            this.confirm_pass_txb.Size = new System.Drawing.Size(226, 23);
+            this.confirm_pass_txb.Size = new System.Drawing.Size(231, 19);
             this.confirm_pass_txb.TabIndex = 6;
             this.confirm_pass_txb.Text = "Confirm Password";
+            this.confirm_pass_txb.Click += new System.EventHandler(this.confirm_pass_txb_Click);
             // 
             // email_txb
             // 
             this.email_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.email_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.email_txb.Location = new System.Drawing.Point(195, 156);
+            this.email_txb.Location = new System.Drawing.Point(195, 158);
             this.email_txb.Margin = new System.Windows.Forms.Padding(2);
             this.email_txb.Name = "email_txb";
-            this.email_txb.Size = new System.Drawing.Size(253, 23);
+            this.email_txb.Size = new System.Drawing.Size(253, 19);
             this.email_txb.TabIndex = 5;
             this.email_txb.Text = "Email";
+            this.email_txb.Click += new System.EventHandler(this.email_txb_Click);
+            this.email_txb.TextChanged += new System.EventHandler(this.email_txb_TextChanged);
             // 
             // username2_txb
             // 
             this.username2_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username2_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username2_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username2_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.username2_txb.Location = new System.Drawing.Point(195, 207);
+            this.username2_txb.Location = new System.Drawing.Point(195, 209);
             this.username2_txb.Margin = new System.Windows.Forms.Padding(2);
             this.username2_txb.Name = "username2_txb";
-            this.username2_txb.Size = new System.Drawing.Size(253, 23);
+            this.username2_txb.Size = new System.Drawing.Size(253, 19);
             this.username2_txb.TabIndex = 4;
             this.username2_txb.Text = "Username";
+            this.username2_txb.Click += new System.EventHandler(this.username2_txb_Click);
             // 
             // password2_txb
             // 
             this.password2_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password2_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password2_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password2_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.password2_txb.Location = new System.Drawing.Point(195, 258);
             this.password2_txb.Margin = new System.Windows.Forms.Padding(2);
             this.password2_txb.Name = "password2_txb";
-            this.password2_txb.Size = new System.Drawing.Size(225, 23);
+            this.password2_txb.Size = new System.Drawing.Size(225, 19);
             this.password2_txb.TabIndex = 3;
             this.password2_txb.Text = "Password";
+            this.password2_txb.Click += new System.EventHandler(this.password2_txb_Click);
             // 
             // signIn_btn
             // 
@@ -345,12 +373,12 @@
             this.signIn_btn.BackColor = System.Drawing.Color.Transparent;
             this.signIn_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signIn_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signIn_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signIn_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signIn_btn.ForeColor = System.Drawing.SystemColors.Control;
             this.signIn_btn.Location = new System.Drawing.Point(374, 396);
             this.signIn_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.signIn_btn.Name = "signIn_btn";
-            this.signIn_btn.Size = new System.Drawing.Size(66, 20);
+            this.signIn_btn.Size = new System.Drawing.Size(59, 18);
             this.signIn_btn.TabIndex = 2;
             this.signIn_btn.Text = "Sign In";
             this.signIn_btn.Click += new System.EventHandler(this.signIn_btn_Click);
@@ -396,7 +424,7 @@
             this.Home_header.Location = new System.Drawing.Point(0, 0);
             this.Home_header.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Home_header.Name = "Home_header";
-            this.Home_header.Size = new System.Drawing.Size(652, 99);
+            this.Home_header.Size = new System.Drawing.Size(652, 93);
             this.Home_header.TabIndex = 2;
             // 
             // logOut_btn
@@ -428,7 +456,7 @@
             this.addEvent_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addEvent_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEvent_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.addEvent_btn.Location = new System.Drawing.Point(29, 25);
+            this.addEvent_btn.Location = new System.Drawing.Point(29, 21);
             this.addEvent_btn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.addEvent_btn.Name = "addEvent_btn";
             this.addEvent_btn.Size = new System.Drawing.Size(51, 54);
@@ -441,12 +469,13 @@
             this.doneFilter_btn.BackColor = System.Drawing.Color.Transparent;
             this.doneFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("doneFilter_btn.BackgroundImage")));
             this.doneFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doneFilter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.doneFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.doneFilter_btn.FlatAppearance.BorderSize = 0;
             this.doneFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.doneFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.doneFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doneFilter_btn.Location = new System.Drawing.Point(475, 30);
+            this.doneFilter_btn.Location = new System.Drawing.Point(475, 26);
             this.doneFilter_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.doneFilter_btn.Name = "doneFilter_btn";
             this.doneFilter_btn.Size = new System.Drawing.Size(71, 42);
@@ -459,13 +488,14 @@
             this.reminderDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
             this.reminderDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reminderDateFilter_btn.BackgroundImage")));
             this.reminderDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reminderDateFilter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reminderDateFilter_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.reminderDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatAppearance.BorderSize = 0;
             this.reminderDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.reminderDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reminderDateFilter_btn.Location = new System.Drawing.Point(296, 30);
+            this.reminderDateFilter_btn.Location = new System.Drawing.Point(296, 26);
             this.reminderDateFilter_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.reminderDateFilter_btn.Name = "reminderDateFilter_btn";
             this.reminderDateFilter_btn.Size = new System.Drawing.Size(127, 42);
@@ -478,13 +508,14 @@
             this.startDateFilter_btn.BackColor = System.Drawing.Color.Transparent;
             this.startDateFilter_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("startDateFilter_btn.BackgroundImage")));
             this.startDateFilter_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.startDateFilter_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startDateFilter_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.startDateFilter_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatAppearance.BorderSize = 0;
             this.startDateFilter_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.startDateFilter_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startDateFilter_btn.Location = new System.Drawing.Point(114, 30);
+            this.startDateFilter_btn.Location = new System.Drawing.Point(114, 26);
             this.startDateFilter_btn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.startDateFilter_btn.Name = "startDateFilter_btn";
             this.startDateFilter_btn.Size = new System.Drawing.Size(135, 42);
@@ -536,6 +567,16 @@
             this.admin_page.Name = "admin_page";
             this.admin_page.Size = new System.Drawing.Size(652, 484);
             this.admin_page.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(547, 454);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Logout";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // admin_save_btn
             // 
@@ -623,28 +664,8 @@
             // timer2
             // 
             this.timer2.Enabled = true;
-            this.timer2.Interval = 10000;
+            this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(35, 427);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login as admin";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(547, 454);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Logout";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -653,10 +674,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
-            this.Controls.Add(this.admin_page);
+            this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.LogIn_page);
             this.Controls.Add(this.Home_page);
-            this.Controls.Add(this.SignUp_page);
+            this.Controls.Add(this.admin_page);
             this.Controls.Add(this.Start_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);

@@ -314,5 +314,102 @@ namespace Event_scheduling_planning_system
         {
             LogIn_page.BringToFront();
         }
+
+        private void email_txb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void deleteTextWhenTap(TextBox textField , string defaultText , bool isChange)
+        {
+            if (isChange == true) textField.Text = "";
+            else  textField.Text = defaultText;
+        }
+
+        private void email_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(email_txb , "Email" , true);
+
+            //deleteTextWhenTap(username2_txb , "Username" , false);
+            //deleteTextWhenTap(password2_txb , "Password" , false);
+            //deleteTextWhenTap(confirm_pass_txb , "Confirm Password" , false);
+
+        }
+
+        private void username2_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(username2_txb , "Username" , true);
+
+            //deleteTextWhenTap(email_txb, "Email", false);
+            //deleteTextWhenTap(password2_txb, "Password", false);
+            //deleteTextWhenTap(confirm_pass_txb, "Confirm Password", false);
+        }
+
+        private void password2_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(password2_txb , "Password" , true);
+
+            //deleteTextWhenTap(email_txb, "Email", false);
+            //deleteTextWhenTap(username2_txb, "Username", false);
+            //deleteTextWhenTap(confirm_pass_txb, "Confirm Password", false);
+        }
+
+        private void confirm_pass_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(confirm_pass_txb , "Confirm Password" , true);
+
+            //deleteTextWhenTap(email_txb, "Email", false);
+            //deleteTextWhenTap(password2_txb, "Password", false);
+            //deleteTextWhenTap(username2_txb, "Username", false);
+        }
+
+        //Login
+        private void username1_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(username1_txb, "Username", true);
+            //deleteTextWhenTap(password1_txb, "123", false);
+        }
+
+        private void password1_txb_Click(object sender, EventArgs e)
+        {
+            deleteTextWhenTap(password1_txb, "123", true);
+            //deleteTextWhenTap(username1_txb, "Username", false);
+        }
+
+        private void eye_close1_Click(object sender, EventArgs e)
+        {
+            eye_open1.BringToFront();
+            password1_txb.UseSystemPasswordChar = false;
+        }
+
+        private void eye_open1_Click_1(object sender, EventArgs e)
+        {
+            eye_close1.BringToFront();
+            password1_txb.UseSystemPasswordChar = true;
+        }
+
+        private void eye_close2_Click(object sender, EventArgs e)
+        {
+            eye_open2.BringToFront();
+            password2_txb.UseSystemPasswordChar = false;
+        }
+
+        private void eye_open2_Click(object sender, EventArgs e)
+        {
+            eye_close2.BringToFront();
+            password2_txb.UseSystemPasswordChar = true;
+        }
+
+        private void eye_open3_Click(object sender, EventArgs e)
+        {
+            eye_close3.BringToFront();
+            confirm_pass_txb.UseSystemPasswordChar = true;
+        }
+
+        private void eye_close3_Click(object sender, EventArgs e)
+        {
+            eye_open3.BringToFront();
+            confirm_pass_txb.UseSystemPasswordChar = false;
+        }
     }
 }
