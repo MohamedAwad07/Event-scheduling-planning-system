@@ -39,16 +39,16 @@
             this.logIn_btn = new System.Windows.Forms.Button();
             this.eye_open1 = new System.Windows.Forms.Button();
             this.SignUp_page = new System.Windows.Forms.Panel();
-            this.eye_open3 = new System.Windows.Forms.Button();
-            this.eye_close3 = new System.Windows.Forms.Button();
-            this.eye_open2 = new System.Windows.Forms.Button();
-            this.eye_close2 = new System.Windows.Forms.Button();
-            this.confirm_pass_txb = new System.Windows.Forms.TextBox();
             this.email_txb = new System.Windows.Forms.TextBox();
             this.username2_txb = new System.Windows.Forms.TextBox();
             this.password2_txb = new System.Windows.Forms.TextBox();
             this.signIn_btn = new System.Windows.Forms.Label();
             this.create_acc_btn = new System.Windows.Forms.Button();
+            this.eye_open2 = new System.Windows.Forms.Button();
+            this.eye_close2 = new System.Windows.Forms.Button();
+            this.confirm_pass_txb = new System.Windows.Forms.TextBox();
+            this.eye_open3 = new System.Windows.Forms.Button();
+            this.eye_close3 = new System.Windows.Forms.Button();
             this.Home_page = new System.Windows.Forms.Panel();
             this.Home_header = new System.Windows.Forms.Panel();
             this.logOut_btn = new System.Windows.Forms.Button();
@@ -69,6 +69,9 @@
             this.admin_end_DT = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -232,101 +235,6 @@
             this.SignUp_page.Size = new System.Drawing.Size(652, 484);
             this.SignUp_page.TabIndex = 34;
             // 
-            // eye_open3
-            // 
-            this.eye_open3.BackColor = System.Drawing.Color.Transparent;
-            this.eye_open3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open3.BackgroundImage")));
-            this.eye_open3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_open3.CausesValidation = false;
-            this.eye_open3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_open3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.eye_open3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_open3.FlatAppearance.BorderSize = 0;
-            this.eye_open3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_open3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_open3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_open3.Location = new System.Drawing.Point(424, 308);
-            this.eye_open3.Margin = new System.Windows.Forms.Padding(2);
-            this.eye_open3.Name = "eye_open3";
-            this.eye_open3.Size = new System.Drawing.Size(23, 23);
-            this.eye_open3.TabIndex = 9;
-            this.eye_open3.UseVisualStyleBackColor = false;
-            this.eye_open3.Click += new System.EventHandler(this.eye_open3_Click);
-            // 
-            // eye_close3
-            // 
-            this.eye_close3.BackColor = System.Drawing.Color.Transparent;
-            this.eye_close3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close3.BackgroundImage")));
-            this.eye_close3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_close3.CausesValidation = false;
-            this.eye_close3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_close3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_close3.FlatAppearance.BorderSize = 0;
-            this.eye_close3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_close3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_close3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close3.Location = new System.Drawing.Point(424, 308);
-            this.eye_close3.Margin = new System.Windows.Forms.Padding(2);
-            this.eye_close3.Name = "eye_close3";
-            this.eye_close3.Size = new System.Drawing.Size(23, 23);
-            this.eye_close3.TabIndex = 10;
-            this.eye_close3.UseVisualStyleBackColor = false;
-            this.eye_close3.Click += new System.EventHandler(this.eye_close3_Click);
-            // 
-            // eye_open2
-            // 
-            this.eye_open2.BackColor = System.Drawing.Color.Transparent;
-            this.eye_open2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open2.BackgroundImage")));
-            this.eye_open2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_open2.CausesValidation = false;
-            this.eye_open2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_open2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.eye_open2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_open2.FlatAppearance.BorderSize = 0;
-            this.eye_open2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_open2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_open2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_open2.Location = new System.Drawing.Point(424, 256);
-            this.eye_open2.Margin = new System.Windows.Forms.Padding(2);
-            this.eye_open2.Name = "eye_open2";
-            this.eye_open2.Size = new System.Drawing.Size(23, 23);
-            this.eye_open2.TabIndex = 7;
-            this.eye_open2.UseVisualStyleBackColor = false;
-            this.eye_open2.Click += new System.EventHandler(this.eye_open2_Click);
-            // 
-            // eye_close2
-            // 
-            this.eye_close2.BackColor = System.Drawing.Color.Transparent;
-            this.eye_close2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close2.BackgroundImage")));
-            this.eye_close2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.eye_close2.CausesValidation = false;
-            this.eye_close2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.eye_close2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.eye_close2.FlatAppearance.BorderSize = 0;
-            this.eye_close2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.eye_close2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.eye_close2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eye_close2.Location = new System.Drawing.Point(424, 257);
-            this.eye_close2.Margin = new System.Windows.Forms.Padding(2);
-            this.eye_close2.Name = "eye_close2";
-            this.eye_close2.Size = new System.Drawing.Size(23, 23);
-            this.eye_close2.TabIndex = 8;
-            this.eye_close2.UseVisualStyleBackColor = false;
-            this.eye_close2.Click += new System.EventHandler(this.eye_close2_Click);
-            // 
-            // confirm_pass_txb
-            // 
-            this.confirm_pass_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirm_pass_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.confirm_pass_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.confirm_pass_txb.Location = new System.Drawing.Point(195, 309);
-            this.confirm_pass_txb.Margin = new System.Windows.Forms.Padding(2);
-            this.confirm_pass_txb.Name = "confirm_pass_txb";
-            this.confirm_pass_txb.Size = new System.Drawing.Size(231, 19);
-            this.confirm_pass_txb.TabIndex = 6;
-            this.confirm_pass_txb.Text = "Confirm Password";
-            this.confirm_pass_txb.Click += new System.EventHandler(this.confirm_pass_txb_Click);
-            // 
             // email_txb
             // 
             this.email_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -400,6 +308,101 @@
             this.create_acc_btn.UseVisualStyleBackColor = false;
             this.create_acc_btn.Click += new System.EventHandler(this.create_acc_btn_Click);
             // 
+            // eye_open2
+            // 
+            this.eye_open2.BackColor = System.Drawing.Color.Transparent;
+            this.eye_open2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open2.BackgroundImage")));
+            this.eye_open2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_open2.CausesValidation = false;
+            this.eye_open2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.eye_open2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_open2.FlatAppearance.BorderSize = 0;
+            this.eye_open2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_open2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_open2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_open2.Location = new System.Drawing.Point(424, 256);
+            this.eye_open2.Margin = new System.Windows.Forms.Padding(2);
+            this.eye_open2.Name = "eye_open2";
+            this.eye_open2.Size = new System.Drawing.Size(23, 23);
+            this.eye_open2.TabIndex = 7;
+            this.eye_open2.UseVisualStyleBackColor = false;
+            this.eye_open2.Click += new System.EventHandler(this.eye_open2_Click);
+            // 
+            // eye_close2
+            // 
+            this.eye_close2.BackColor = System.Drawing.Color.Transparent;
+            this.eye_close2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close2.BackgroundImage")));
+            this.eye_close2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_close2.CausesValidation = false;
+            this.eye_close2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_close2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_close2.FlatAppearance.BorderSize = 0;
+            this.eye_close2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_close2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_close2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_close2.Location = new System.Drawing.Point(424, 257);
+            this.eye_close2.Margin = new System.Windows.Forms.Padding(2);
+            this.eye_close2.Name = "eye_close2";
+            this.eye_close2.Size = new System.Drawing.Size(23, 23);
+            this.eye_close2.TabIndex = 8;
+            this.eye_close2.UseVisualStyleBackColor = false;
+            this.eye_close2.Click += new System.EventHandler(this.eye_close2_Click);
+            // 
+            // confirm_pass_txb
+            // 
+            this.confirm_pass_txb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.confirm_pass_txb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm_pass_txb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.confirm_pass_txb.Location = new System.Drawing.Point(195, 309);
+            this.confirm_pass_txb.Margin = new System.Windows.Forms.Padding(2);
+            this.confirm_pass_txb.Name = "confirm_pass_txb";
+            this.confirm_pass_txb.Size = new System.Drawing.Size(231, 19);
+            this.confirm_pass_txb.TabIndex = 6;
+            this.confirm_pass_txb.Text = "Confirm Password";
+            this.confirm_pass_txb.Click += new System.EventHandler(this.confirm_pass_txb_Click);
+            // 
+            // eye_open3
+            // 
+            this.eye_open3.BackColor = System.Drawing.Color.Transparent;
+            this.eye_open3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_open3.BackgroundImage")));
+            this.eye_open3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_open3.CausesValidation = false;
+            this.eye_open3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_open3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.eye_open3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_open3.FlatAppearance.BorderSize = 0;
+            this.eye_open3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_open3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_open3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_open3.Location = new System.Drawing.Point(424, 308);
+            this.eye_open3.Margin = new System.Windows.Forms.Padding(2);
+            this.eye_open3.Name = "eye_open3";
+            this.eye_open3.Size = new System.Drawing.Size(23, 23);
+            this.eye_open3.TabIndex = 9;
+            this.eye_open3.UseVisualStyleBackColor = false;
+            this.eye_open3.Click += new System.EventHandler(this.eye_open3_Click);
+            // 
+            // eye_close3
+            // 
+            this.eye_close3.BackColor = System.Drawing.Color.Transparent;
+            this.eye_close3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("eye_close3.BackgroundImage")));
+            this.eye_close3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.eye_close3.CausesValidation = false;
+            this.eye_close3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eye_close3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.eye_close3.FlatAppearance.BorderSize = 0;
+            this.eye_close3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.eye_close3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.eye_close3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eye_close3.Location = new System.Drawing.Point(424, 308);
+            this.eye_close3.Margin = new System.Windows.Forms.Padding(2);
+            this.eye_close3.Name = "eye_close3";
+            this.eye_close3.Size = new System.Drawing.Size(23, 23);
+            this.eye_close3.TabIndex = 10;
+            this.eye_close3.UseVisualStyleBackColor = false;
+            this.eye_close3.Click += new System.EventHandler(this.eye_close3_Click);
+            // 
             // Home_page
             // 
             this.Home_page.Controls.Add(this.Home_header);
@@ -415,6 +418,9 @@
             // 
             this.Home_header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home_header.BackgroundImage")));
             this.Home_header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Home_header.Controls.Add(this.label3);
+            this.Home_header.Controls.Add(this.label2);
+            this.Home_header.Controls.Add(this.label1);
             this.Home_header.Controls.Add(this.logOut_btn);
             this.Home_header.Controls.Add(this.addEvent_btn);
             this.Home_header.Controls.Add(this.doneFilter_btn);
@@ -667,6 +673,44 @@
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Aqua;
+            this.label1.Location = new System.Drawing.Point(169, 76);
+            this.label1.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label1.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 2);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "              ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Aqua;
+            this.label2.Location = new System.Drawing.Point(348, 76);
+            this.label2.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label2.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 2);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "              ";
+            this.label2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Aqua;
+            this.label3.Location = new System.Drawing.Point(501, 76);
+            this.label3.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label3.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 2);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "              ";
+            this.label3.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,9 +718,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.LogIn_page);
-            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.admin_page);
             this.Controls.Add(this.Start_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -741,6 +785,9 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

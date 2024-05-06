@@ -234,16 +234,25 @@ namespace Event_scheduling_planning_system
         private void doneFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("filterDoneEvents");
+            label3.Visible = true;
+            label1.Visible = false;
+            label2.Visible = false;
         }
 
         private void reminderDateFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("filterByReminder");
+            label2.Visible = true;
+            label1.Visible = false;
+            label3.Visible = false;
         }
 
         private void startDateFilter_btn_Click(object sender, EventArgs e)
         {
             DisplayEvents("displayEventsByStartDate");
+            label1.Visible = true;
+            label2.Visible = false;
+            label3.Visible = false;
         }
 
 
