@@ -73,6 +73,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.viewReport_btn = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -85,6 +86,7 @@
             // 
             this.LogIn_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn_page.BackgroundImage")));
             this.LogIn_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LogIn_page.Controls.Add(this.viewReport_btn);
             this.LogIn_page.Controls.Add(this.button1);
             this.LogIn_page.Controls.Add(this.eye_close1);
             this.LogIn_page.Controls.Add(this.signUp_btn);
@@ -722,6 +724,18 @@
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // viewReport_btn
+            // 
+            this.viewReport_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewReport_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewReport_btn.Location = new System.Drawing.Point(504, 425);
+            this.viewReport_btn.Name = "viewReport_btn";
+            this.viewReport_btn.Size = new System.Drawing.Size(125, 23);
+            this.viewReport_btn.TabIndex = 8;
+            this.viewReport_btn.Text = "View crystal Report";
+            this.viewReport_btn.UseVisualStyleBackColor = true;
+            this.viewReport_btn.Click += new System.EventHandler(this.viewReport_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,6 +814,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button viewReport_btn;
     }
 }
 

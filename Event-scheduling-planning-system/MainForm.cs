@@ -423,5 +423,11 @@ namespace Event_scheduling_planning_system
             eye_open3.BringToFront();
             confirm_pass_txb.UseSystemPasswordChar = false;
         }
+
+        private void viewReport_btn_Click(object sender, EventArgs e)
+        {
+            CrystalReportForm crf = new CrystalReportForm();
+            crf.ShowDialog();
+        }
     }
 }
