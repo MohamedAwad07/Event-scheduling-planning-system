@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Event_scheduling_planning_system
@@ -331,7 +332,7 @@ namespace Event_scheduling_planning_system
 
         }
 
-        void deleteTextWhenTap(TextBox textField , string defaultText , bool isChange)
+        void deleteTextWhenTap(System.Windows.Forms.TextBox textField , string defaultText , bool isChange)
         {
             if (isChange == true) textField.Text = "";
             else  textField.Text = defaultText;

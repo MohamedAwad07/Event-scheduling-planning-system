@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventCard));
             this.dayNum_pic = new System.Windows.Forms.PictureBox();
             this.dayNum_lbl = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.eventLocation_lbl = new System.Windows.Forms.Label();
             this.done_pic = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dayNum_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.done_pic)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +87,7 @@
             this.editEvent_btn.Name = "editEvent_btn";
             this.editEvent_btn.Size = new System.Drawing.Size(26, 25);
             this.editEvent_btn.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.editEvent_btn, "Edit");
             this.editEvent_btn.UseVisualStyleBackColor = false;
             this.editEvent_btn.Click += new System.EventHandler(this.editEvent_btn_Click);
             // 
@@ -101,6 +104,7 @@
             this.deleteEvent_btn.Name = "deleteEvent_btn";
             this.deleteEvent_btn.Size = new System.Drawing.Size(26, 25);
             this.deleteEvent_btn.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.deleteEvent_btn, "Delete");
             this.deleteEvent_btn.UseVisualStyleBackColor = false;
             this.deleteEvent_btn.Click += new System.EventHandler(this.deleteEvent_btn_Click);
             // 
@@ -265,5 +269,6 @@
         private System.Windows.Forms.Label eventLocation_lbl;
         private System.Windows.Forms.PictureBox done_pic;
         public System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

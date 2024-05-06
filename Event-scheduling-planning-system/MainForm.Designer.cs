@@ -51,6 +51,9 @@
             this.eye_close3 = new System.Windows.Forms.Button();
             this.Home_page = new System.Windows.Forms.Panel();
             this.Home_header = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.logOut_btn = new System.Windows.Forms.Button();
             this.addEvent_btn = new System.Windows.Forms.Label();
             this.doneFilter_btn = new System.Windows.Forms.Button();
@@ -69,9 +72,7 @@
             this.admin_end_DT = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -156,6 +157,7 @@
             this.password1_txb.Size = new System.Drawing.Size(244, 19);
             this.password1_txb.TabIndex = 2;
             this.password1_txb.Text = "123";
+            this.toolTip1.SetToolTip(this.password1_txb, "Password");
             this.password1_txb.UseSystemPasswordChar = true;
             this.password1_txb.Click += new System.EventHandler(this.password1_txb_Click);
             // 
@@ -173,6 +175,7 @@
             this.username1_txb.Size = new System.Drawing.Size(267, 25);
             this.username1_txb.TabIndex = 1;
             this.username1_txb.Text = "Username";
+            this.toolTip1.SetToolTip(this.username1_txb, "Username");
             this.username1_txb.Click += new System.EventHandler(this.username1_txb_Click);
             // 
             // logIn_btn
@@ -246,6 +249,7 @@
             this.email_txb.Size = new System.Drawing.Size(253, 19);
             this.email_txb.TabIndex = 5;
             this.email_txb.Text = "Email";
+            this.toolTip1.SetToolTip(this.email_txb, "Email");
             this.email_txb.Click += new System.EventHandler(this.email_txb_Click);
             this.email_txb.TextChanged += new System.EventHandler(this.email_txb_TextChanged);
             // 
@@ -260,6 +264,7 @@
             this.username2_txb.Size = new System.Drawing.Size(253, 19);
             this.username2_txb.TabIndex = 4;
             this.username2_txb.Text = "Username";
+            this.toolTip1.SetToolTip(this.username2_txb, "Username");
             this.username2_txb.Click += new System.EventHandler(this.username2_txb_Click);
             // 
             // password2_txb
@@ -273,6 +278,7 @@
             this.password2_txb.Size = new System.Drawing.Size(225, 19);
             this.password2_txb.TabIndex = 3;
             this.password2_txb.Text = "Password";
+            this.toolTip1.SetToolTip(this.password2_txb, "Password");
             this.password2_txb.Click += new System.EventHandler(this.password2_txb_Click);
             // 
             // signIn_btn
@@ -360,6 +366,7 @@
             this.confirm_pass_txb.Size = new System.Drawing.Size(231, 19);
             this.confirm_pass_txb.TabIndex = 6;
             this.confirm_pass_txb.Text = "Confirm Password";
+            this.toolTip1.SetToolTip(this.confirm_pass_txb, "Confirm Password");
             this.confirm_pass_txb.Click += new System.EventHandler(this.confirm_pass_txb_Click);
             // 
             // eye_open3
@@ -433,6 +440,44 @@
             this.Home_header.Size = new System.Drawing.Size(652, 93);
             this.Home_header.TabIndex = 2;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Aqua;
+            this.label3.Location = new System.Drawing.Point(501, 76);
+            this.label3.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label3.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 2);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "              ";
+            this.label3.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Aqua;
+            this.label2.Location = new System.Drawing.Point(348, 76);
+            this.label2.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label2.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 2);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "              ";
+            this.label2.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Aqua;
+            this.label1.Location = new System.Drawing.Point(169, 76);
+            this.label1.MaximumSize = new System.Drawing.Size(20, 2);
+            this.label1.MinimumSize = new System.Drawing.Size(20, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 2);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "              ";
+            // 
             // logOut_btn
             // 
             this.logOut_btn.BackColor = System.Drawing.Color.Transparent;
@@ -468,6 +513,7 @@
             this.addEvent_btn.Size = new System.Drawing.Size(51, 54);
             this.addEvent_btn.TabIndex = 9;
             this.addEvent_btn.Text = "+";
+            this.toolTip1.SetToolTip(this.addEvent_btn, "Add Event");
             this.addEvent_btn.Click += new System.EventHandler(this.addEvent_btn_Click);
             // 
             // doneFilter_btn
@@ -486,6 +532,7 @@
             this.doneFilter_btn.Name = "doneFilter_btn";
             this.doneFilter_btn.Size = new System.Drawing.Size(71, 42);
             this.doneFilter_btn.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.doneFilter_btn, "Done tasks");
             this.doneFilter_btn.UseVisualStyleBackColor = false;
             this.doneFilter_btn.Click += new System.EventHandler(this.doneFilter_btn_Click);
             // 
@@ -506,6 +553,7 @@
             this.reminderDateFilter_btn.Name = "reminderDateFilter_btn";
             this.reminderDateFilter_btn.Size = new System.Drawing.Size(127, 42);
             this.reminderDateFilter_btn.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.reminderDateFilter_btn, "Sort by reminder date");
             this.reminderDateFilter_btn.UseVisualStyleBackColor = false;
             this.reminderDateFilter_btn.Click += new System.EventHandler(this.reminderDateFilter_btn_Click);
             // 
@@ -526,6 +574,7 @@
             this.startDateFilter_btn.Name = "startDateFilter_btn";
             this.startDateFilter_btn.Size = new System.Drawing.Size(135, 42);
             this.startDateFilter_btn.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.startDateFilter_btn, "Sort by start date");
             this.startDateFilter_btn.UseVisualStyleBackColor = false;
             this.startDateFilter_btn.Click += new System.EventHandler(this.startDateFilter_btn_Click);
             // 
@@ -673,44 +722,6 @@
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Aqua;
-            this.label1.Location = new System.Drawing.Point(169, 76);
-            this.label1.MaximumSize = new System.Drawing.Size(20, 2);
-            this.label1.MinimumSize = new System.Drawing.Size(20, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 2);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "              ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Aqua;
-            this.label2.Location = new System.Drawing.Point(348, 76);
-            this.label2.MaximumSize = new System.Drawing.Size(20, 2);
-            this.label2.MinimumSize = new System.Drawing.Size(20, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 2);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "              ";
-            this.label2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Aqua;
-            this.label3.Location = new System.Drawing.Point(501, 76);
-            this.label3.MaximumSize = new System.Drawing.Size(20, 2);
-            this.label3.MinimumSize = new System.Drawing.Size(20, 2);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 2);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "              ";
-            this.label3.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,8 +730,8 @@
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
             this.Controls.Add(this.Home_page);
-            this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.LogIn_page);
+            this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.admin_page);
             this.Controls.Add(this.Start_page);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -788,6 +799,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
