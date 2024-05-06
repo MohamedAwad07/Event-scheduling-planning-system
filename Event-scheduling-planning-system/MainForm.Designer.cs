@@ -443,7 +443,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Aqua;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(501, 76);
             this.label3.MaximumSize = new System.Drawing.Size(20, 2);
             this.label3.MinimumSize = new System.Drawing.Size(20, 2);
@@ -456,7 +456,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Aqua;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(348, 76);
             this.label2.MaximumSize = new System.Drawing.Size(20, 2);
             this.label2.MinimumSize = new System.Drawing.Size(20, 2);
@@ -469,7 +469,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Aqua;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(169, 76);
             this.label1.MaximumSize = new System.Drawing.Size(20, 2);
             this.label1.MinimumSize = new System.Drawing.Size(20, 2);

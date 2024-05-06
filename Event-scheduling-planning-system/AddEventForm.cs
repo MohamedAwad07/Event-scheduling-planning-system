@@ -213,10 +213,19 @@ namespace Event_scheduling_planning_system
             enddate = end_DT.Value;
             reminderTime = reminder_DT.Value;
 
-            //Console.WriteLine("start date is :" + startdate);
-            if (enddate < startdate || reminderTime < startdate || reminderTime > enddate)
+            if (enddate < startdate)
             {
-                MessageBox.Show("selected date is not valid");
+                MessageBox.Show("End date can not be before the start date");
+                return false;
+            }
+            //else if (reminderTime < startdate)
+            //{
+            //    MessageBox.Show("Reminder time con not be before the start date");
+            //    return false;
+            //}
+            else if (reminderTime > enddate)
+            {
+                MessageBox.Show("Reminder time con not be after the end date");
                 return false;
             }
 
