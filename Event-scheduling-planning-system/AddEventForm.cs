@@ -92,6 +92,20 @@ namespace Event_scheduling_planning_system
             {
                 MessageBox.Show("Event added successfully");
                 eventAdded = true;
+
+                Stack_Event events = new Stack_Event
+                (
+                Stack_Event.Actions.ADD,
+                eventId,
+                userId,
+                eventName_txb.Text.ToString(),
+                eventLocation_txb.Text.ToString(),
+                Convert.ToDateTime(startdate),
+                Convert.ToDateTime(enddate),
+                Convert.ToDateTime(reminderTime),
+                "new"
+                );
+                Stack_handling.saveAction(events);
                 this.Close();
             }
             else
@@ -167,8 +181,24 @@ namespace Event_scheduling_planning_system
             if (r != -1)
             {
                 MessageBox.Show("Event updated successfully");
-                this.Close();
                 DisplayEvents("displayEventsByStartDate");
+
+           
+                Stack_Event events = new Stack_Event
+                    (
+                    Stack_Event.Actions.EDIT,
+                    eventId,
+                    userId,
+                    eventName_txb.Text.ToString(),
+                    eventLocation_txb.Text.ToString(),
+                    Convert.ToDateTime(startdate),
+                    Convert.ToDateTime(enddate),
+                    Convert.ToDateTime(reminderTime),
+                    done_checkbox.Checked ? "done" : "new"
+                    );
+                Stack_handling.saveAction(events);
+
+                this.Close();
             }
             else
                 MessageBox.Show("Something went worng");

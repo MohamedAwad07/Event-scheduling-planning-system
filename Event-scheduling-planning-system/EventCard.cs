@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -79,6 +80,19 @@ namespace Event_scheduling_planning_system
             if (r != -1) 
             {
                 MessageBox.Show("Deleted successfully");
+                Stack_Event events = new Stack_Event
+                (
+                Stack_Event.Actions.DELETE,
+                eventId,
+                currentUserId,
+                name,
+                location,
+                Convert.ToDateTime(startDate),
+                Convert.ToDateTime(endDate),
+                Convert.ToDateTime(reminderDate),
+                status
+                );
+                Stack_handling.saveAction(events);
                 this.Dispose();
             }
             else

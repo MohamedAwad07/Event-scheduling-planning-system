@@ -20,7 +20,7 @@ namespace Event_scheduling_planning_system
     public partial class MainForm : Form
     {
         int currentUserId;
-        OracleConnection conn;
+        public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommandBuilder command;
         DataSet ds;
@@ -192,6 +192,8 @@ namespace Event_scheduling_planning_system
         {
             homePageBody.Controls.Clear();
             LogIn_page.BringToFront();
+            Stack_handling.redo_stack.Clear();
+            Stack_handling.undo_stack.Clear();
         }
 
         public void DisplayEvents(string procedureName)
@@ -422,6 +424,18 @@ namespace Event_scheduling_planning_system
         {
             eye_open3.BringToFront();
             confirm_pass_txb.UseSystemPasswordChar = false;
+        }
+
+        private void undo_btn_Click(object sender, EventArgs e)
+        {
+            Stack_handling.undo();
+            DisplayEvents("displayEventsByStartDate");
+        }
+
+        private void redo_btn_Click(object sender, EventArgs e)
+        {
+            Stack_handling.redo();
+            DisplayEvents("displayEventsByStartDate");
         }
 
         private void viewReport_btn_Click(object sender, EventArgs e)
