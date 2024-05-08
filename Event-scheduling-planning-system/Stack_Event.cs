@@ -19,7 +19,6 @@ namespace Event_scheduling_planning_system
         public Actions action;
          
         public int eventId;
-        public int userId;
         public string eventName;
         public string eventLoc;
         public DateTime eventStartDate;
@@ -28,7 +27,7 @@ namespace Event_scheduling_planning_system
         public string eventStatus;
 
 
-        public Stack_Event(Actions action, int eventId,int userId , string eventName, string eventLoc, DateTime eventStartDate, DateTime eventEndDate, DateTime eventReminderDate, string eventStatus)
+        public Stack_Event(Actions action, int eventId, string eventName, string eventLoc, DateTime eventStartDate, DateTime eventEndDate, DateTime eventReminderDate, string eventStatus)
         {
             this.action = action;
             this.eventId = eventId;
@@ -38,7 +37,6 @@ namespace Event_scheduling_planning_system
             this.eventEndDate = eventEndDate;
             this.eventReminderDate = eventReminderDate;
             this.eventStatus = eventStatus;
-            this.userId = userId;
         }
         public Stack_Event(int id , Actions action)
         {

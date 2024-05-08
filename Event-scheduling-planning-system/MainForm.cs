@@ -19,7 +19,7 @@ namespace Event_scheduling_planning_system
 {
     public partial class MainForm : Form
     {
-        int currentUserId;
+        public static int userId;
         public static OracleConnection conn;
         OracleDataAdapter adapter;
         OracleCommandBuilder command;
@@ -71,7 +71,7 @@ namespace Event_scheduling_planning_system
             try
             {
                 c.ExecuteNonQuery();
-                currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
+                userId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString());
                 DisplayHomePage();
             }
             catch
@@ -93,12 +93,12 @@ namespace Event_scheduling_planning_system
             try
             {
                 c.ExecuteNonQuery();
-                currentUserId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString()) + 1;
-                return currentUserId;
+                userId = Convert.ToInt32(c.Parameters["U_id"].Value.ToString()) + 1;
+                return userId;
             }
             catch
             {
-                currentUserId = 1;
+                userId = 1;
                 return 1;
             }
         }
@@ -183,7 +183,7 @@ namespace Event_scheduling_planning_system
         #region HomePage
         private void addEvent_btn_Click(object sender, EventArgs e)
         {
-            AddEventForm currEvent = new AddEventForm(currentUserId , conn);
+            AddEventForm currEvent = new AddEventForm();
             currEvent.ShowDialog();
             if (currEvent.eventAdded) DisplayEvents("displayEventsByStartDate");
         }
@@ -205,7 +205,7 @@ namespace Event_scheduling_planning_system
             c.CommandText = procedureName;
             c.CommandType = CommandType.StoredProcedure;
 
-            c.Parameters.Add("currId", currentUserId);
+            c.Parameters.Add("currId", userId);
             c.Parameters.Add("Data", OracleDbType.RefCursor, ParameterDirection.Output);
 
             OracleDataReader dr = c.ExecuteReader();
@@ -221,8 +221,7 @@ namespace Event_scheduling_planning_system
                     dr["REMINDERDATETIME"].ToString(),
                     dr["EVENTSTATUS"].ToString(),
                     Convert.ToInt32(dr["EVENTID"].ToString()),
-                    homePageBody,
-                    currentUserId
+                    homePageBody
                     );
                 homePageBody.Controls.Add(card);
             }

@@ -107,7 +107,7 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("reminderDate", currEvent.eventReminderDate);
             c.Parameters.Add("eventLocation", currEvent.eventLoc);
             c.Parameters.Add("status", currEvent.eventStatus);
-            c.Parameters.Add("userId", currEvent.userId);
+            c.Parameters.Add("userId", MainForm.userId);
 
             int r = c.ExecuteNonQuery();
 

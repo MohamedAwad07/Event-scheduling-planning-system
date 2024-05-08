@@ -26,12 +26,11 @@ namespace Event_scheduling_planning_system
         int eventId;
 
         FlowLayoutPanel homePageBody;
-        int currentUserId;
         public EventCard()
         {
             InitializeComponent();
         }
-        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, int eventId , FlowLayoutPanel homePageBody,int currentUserId)
+        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, int eventId , FlowLayoutPanel homePageBody)
         {
             InitializeComponent();
             eventName_lbl.Text = name;
@@ -42,8 +41,7 @@ namespace Event_scheduling_planning_system
             dayNum_lbl.Text = "";
 
 
-            this.homePageBody = homePageBody;
-            this.currentUserId = currentUserId;
+            this.homePageBody = homePageBody; 
             this.name = name;
             this.location = location;
             this.startDate = startDate;
@@ -83,7 +81,6 @@ namespace Event_scheduling_planning_system
                 (
                 Stack_Event.Actions.DELETE,
                 eventId,
-                currentUserId,
                 name,
                 location,
                 Convert.ToDateTime(startDate),
@@ -101,7 +98,7 @@ namespace Event_scheduling_planning_system
 
         private void editEvent_btn_Click(object sender, EventArgs e)
         { 
-           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, eventId , homePageBody , currentUserId)).ShowDialog();
+           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, eventId , homePageBody)).ShowDialog();
         }
     }
 }
