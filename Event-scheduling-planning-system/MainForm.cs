@@ -220,7 +220,6 @@ namespace Event_scheduling_planning_system
                     dr["ENDDATETIME"].ToString(),
                     dr["REMINDERDATETIME"].ToString(),
                     dr["EVENTSTATUS"].ToString(),
-                    conn,
                     Convert.ToInt32(dr["EVENTID"].ToString()),
                     homePageBody,
                     currentUserId

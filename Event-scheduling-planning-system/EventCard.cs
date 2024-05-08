@@ -16,7 +16,7 @@ namespace Event_scheduling_planning_system
 {
     public partial class EventCard : UserControl
     {
-        OracleConnection conn;
+   
         string name;
         string location;
         string startDate;
@@ -31,7 +31,7 @@ namespace Event_scheduling_planning_system
         {
             InitializeComponent();
         }
-        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, OracleConnection conn , int eventId , FlowLayoutPanel homePageBody,int currentUserId)
+        public EventCard(string name , string location , string startDate , string endDate , string reminderDate , string status, int eventId , FlowLayoutPanel homePageBody,int currentUserId)
         {
             InitializeComponent();
             eventName_lbl.Text = name;
@@ -50,7 +50,6 @@ namespace Event_scheduling_planning_system
             this.endDate = endDate;
             this.reminderDate = reminderDate;
             this.status = status;
-            this.conn = conn;
             this.eventId = eventId;
             if(status == "done")
             {
@@ -69,7 +68,7 @@ namespace Event_scheduling_planning_system
         private void deleteEvent_btn_Click(object sender, EventArgs e)
         {
             OracleCommand c = new OracleCommand();
-            c.Connection = conn;
+            c.Connection = MainForm.conn;
 
             c.CommandType = CommandType.Text;
             c.CommandText = "DELETE FROM EVENTS WHERE EVENTID = :id";
@@ -102,7 +101,7 @@ namespace Event_scheduling_planning_system
 
         private void editEvent_btn_Click(object sender, EventArgs e)
         { 
-           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, conn, eventId , homePageBody , currentUserId)).ShowDialog();
+           (new AddEventForm(name, location, startDate, endDate, reminderDate, status, eventId , homePageBody , currentUserId)).ShowDialog();
         }
     }
 }

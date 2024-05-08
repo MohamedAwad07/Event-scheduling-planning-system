@@ -16,7 +16,7 @@ namespace Event_scheduling_planning_system
 
     public partial class AddEventForm : Form
     {
-        OracleConnection conn;
+      
 
         int userId;
         int eventId;
@@ -26,8 +26,10 @@ namespace Event_scheduling_planning_system
         public bool eventAdded = false;
         bool editMode = false;
 
+        Stack_Event eventToPush;
+
         FlowLayoutPanel homePageBody;
-        int currentUserId;
+      
         public AddEventForm()
         {
             InitializeComponent();
@@ -36,11 +38,10 @@ namespace Event_scheduling_planning_system
         {
             InitializeComponent();
             this.userId = userId;
-            this.conn = conn;
             done_checkbox.Visible = false;
         }
 
-        public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, OracleConnection conn, int eventId, FlowLayoutPanel homePageBody , int currUserId)
+        public AddEventForm( string name,  string location,  string startDate,  string endDate,  string reminderDate,  string status, int eventId, FlowLayoutPanel homePageBody , int userId)
         {
             InitializeComponent();
             eventName_txb.Text = name;
@@ -49,11 +50,24 @@ namespace Event_scheduling_planning_system
             end_DT.Text = endDate;
             reminder_DT.Text = reminderDate;
             done_checkbox.Checked = status == "done" ? true : false;
-            this.conn = conn;
+            this.userId = userId;
             this.eventId = eventId;
             editMode = true;
             this.homePageBody = homePageBody;
-            this.currentUserId = currUserId;
+       
+             eventToPush = new Stack_Event
+                   (
+                   Stack_Event.Actions.EDIT,
+                   eventId,
+                   userId,
+                   eventName_txb.Text.ToString(),
+                   eventLocation_txb.Text.ToString(),
+                   Convert.ToDateTime(startDate),
+                   Convert.ToDateTime(endDate),
+                   Convert.ToDateTime(reminderDate),
+                   done_checkbox.Checked ? "done" : "new"
+                   );
+         
         }
 
         private void saveEvent_btn_Click(object sender, EventArgs e)
@@ -67,7 +81,7 @@ namespace Event_scheduling_planning_system
                 return;
             }   
             OracleCommand c = new OracleCommand();
-            c.Connection = conn;
+            c.Connection = MainForm.conn;
 
 
             c.CommandText = "Insert into EVENTS values (:Id , :name , :startdate , :enddate , :reminderDate , :eventLocation , :status , :userId)";
@@ -117,12 +131,12 @@ namespace Event_scheduling_planning_system
         {
             homePageBody.Controls.Clear();
             OracleCommand c = new OracleCommand();
-            c.Connection = conn;
+            c.Connection = MainForm.conn;
 
             c.CommandText = procedureName;
             c.CommandType = CommandType.StoredProcedure;
 
-            c.Parameters.Add("currId", currentUserId);
+            c.Parameters.Add("currId", userId);
             c.Parameters.Add("Data", OracleDbType.RefCursor, ParameterDirection.Output);
 
             OracleDataReader dr = c.ExecuteReader();
@@ -137,11 +151,10 @@ namespace Event_scheduling_planning_system
                     dr["ENDDATETIME"].ToString(),
                     dr["REMINDERDATETIME"].ToString(),
                     dr["EVENTSTATUS"].ToString(),
-                    conn,
                     Convert.ToInt32(dr["EVENTID"].ToString()),
                     homePageBody,
-                    currentUserId
-                    );
+                    userId
+                    ); ;
                 homePageBody.Controls.Add(card);
             }
             dr.Close();
@@ -149,7 +162,7 @@ namespace Event_scheduling_planning_system
         private void edit()
         {
             OracleCommand c = new OracleCommand();
-            c.Connection = conn;
+            c.Connection = MainForm.conn;
 
 
             c.CommandType = CommandType.Text;
@@ -165,8 +178,6 @@ namespace Event_scheduling_planning_system
                     WHERE EVENTID = :id
                 ";
 
-
-
             c.Parameters.Add("name", eventName_txb.Text);
             c.Parameters.Add("loc", eventLocation_txb.Text);
             c.Parameters.Add("startdate", startdate);
@@ -176,28 +187,12 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("id", eventId);
 
 
-
             int r = c.ExecuteNonQuery();
             if (r != -1)
             {
                 MessageBox.Show("Event updated successfully");
+                Stack_handling.saveAction(eventToPush);
                 DisplayEvents("displayEventsByStartDate");
-
-           
-                Stack_Event events = new Stack_Event
-                    (
-                    Stack_Event.Actions.EDIT,
-                    eventId,
-                    userId,
-                    eventName_txb.Text.ToString(),
-                    eventLocation_txb.Text.ToString(),
-                    Convert.ToDateTime(startdate),
-                    Convert.ToDateTime(enddate),
-                    Convert.ToDateTime(reminderTime),
-                    done_checkbox.Checked ? "done" : "new"
-                    );
-                Stack_handling.saveAction(events);
-
                 this.Close();
             }
             else
@@ -207,7 +202,7 @@ namespace Event_scheduling_planning_system
         public void getEventId()
         {
             OracleCommand c = new OracleCommand();
-            c.Connection = conn;
+            c.Connection = MainForm.conn;
 
             c.CommandText = "getEventId";
             c.CommandType = CommandType.StoredProcedure;
@@ -275,7 +270,7 @@ namespace Event_scheduling_planning_system
         {
             int is_overlapping;
             OracleCommand cmd = new OracleCommand();
-            cmd.Connection = conn;
+            cmd.Connection = MainForm.conn;
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "CheckEventOverlap";
@@ -284,6 +279,7 @@ namespace Event_scheduling_planning_system
             cmd.Parameters.Add("p_StartDateTime", startDateTime);
             cmd.Parameters.Add("p_EndDateTime", endDateTime);
             cmd.Parameters.Add("p_Overlap", OracleDbType.Int32, ParameterDirection.Output);
+            cmd.Parameters.Add("eventId", editMode ? eventId : 0);
 
             try
             {

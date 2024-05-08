@@ -40,5 +40,10 @@ namespace Event_scheduling_planning_system
             this.eventStatus = eventStatus;
             this.userId = userId;
         }
+        public Stack_Event(int id , Actions action)
+        {
+            this.eventId = id;
+            this.action = action;
+        }
     }
 }

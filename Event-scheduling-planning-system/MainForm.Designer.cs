@@ -51,6 +51,8 @@
             this.eye_close3 = new System.Windows.Forms.Button();
             this.Home_page = new System.Windows.Forms.Panel();
             this.Home_header = new System.Windows.Forms.Panel();
+            this.undo_btn = new System.Windows.Forms.Button();
+            this.redo_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.redo_btn = new System.Windows.Forms.Button();
-            this.undo_btn = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -444,6 +444,29 @@
             this.Home_header.Size = new System.Drawing.Size(652, 93);
             this.Home_header.TabIndex = 2;
             // 
+            // undo_btn
+            // 
+            this.undo_btn.BackColor = System.Drawing.Color.Transparent;
+            this.undo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.undo_btn.Location = new System.Drawing.Point(586, 47);
+            this.undo_btn.Name = "undo_btn";
+            this.undo_btn.Size = new System.Drawing.Size(24, 40);
+            this.undo_btn.TabIndex = 36;
+            this.undo_btn.Text = "◀";
+            this.undo_btn.UseVisualStyleBackColor = false;
+            this.undo_btn.Click += new System.EventHandler(this.undo_btn_Click);
+            // 
+            // redo_btn
+            // 
+            this.redo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.redo_btn.Location = new System.Drawing.Point(616, 47);
+            this.redo_btn.Name = "redo_btn";
+            this.redo_btn.Size = new System.Drawing.Size(24, 40);
+            this.redo_btn.TabIndex = 35;
+            this.redo_btn.Text = "▶";
+            this.redo_btn.UseVisualStyleBackColor = true;
+            this.redo_btn.Click += new System.EventHandler(this.redo_btn_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -725,26 +748,6 @@
             this.timer2.Enabled = true;
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // redo_btn
-            // 
-            this.redo_btn.Location = new System.Drawing.Point(616, 59);
-            this.redo_btn.Name = "redo_btn";
-            this.redo_btn.Size = new System.Drawing.Size(17, 19);
-            this.redo_btn.TabIndex = 35;
-            this.redo_btn.Text = ">";
-            this.redo_btn.UseVisualStyleBackColor = true;
-            this.redo_btn.Click += new System.EventHandler(this.redo_btn_Click);
-            // 
-            // undo_btn
-            // 
-            this.undo_btn.Location = new System.Drawing.Point(587, 59);
-            this.undo_btn.Name = "undo_btn";
-            this.undo_btn.Size = new System.Drawing.Size(17, 19);
-            this.undo_btn.TabIndex = 36;
-            this.undo_btn.Text = "<";
-            this.undo_btn.UseVisualStyleBackColor = true;
-            this.undo_btn.Click += new System.EventHandler(this.undo_btn_Click);
             // 
             // MainForm
             // 
