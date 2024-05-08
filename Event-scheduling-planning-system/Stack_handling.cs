@@ -20,12 +20,9 @@ namespace Event_scheduling_planning_system
 
         public static void undo()
         {
-            //Console.WriteLine("undo called");
             if (undo_stack.Count <= 0) return;
             Stack_Event currEvent = undo_stack.Pop();
-           
 
-            // Console.WriteLine("user id from undo " + currEvent.userId);
             if (currEvent.action == Stack_Event.Actions.ADD)
             {
                 if(deleteEvent(currEvent))
@@ -38,17 +35,18 @@ namespace Event_scheduling_planning_system
             }
             else
             {
-                if(editEvent(currEvent))
-                    redo_stack.Push(currEvent);
+
+                if(editEvent(ref currEvent))
+                {
+                    redo_stack.Push(currEvent);        
+                }
             }
         }
         public static void redo()
         {
-            //Console.WriteLine("redo called");
             if (redo_stack.Count <= 0) return;
             Stack_Event currEvent = redo_stack.Pop();
          
-            //Console.WriteLine("user id from redo " + currEvent.userId);
             if (currEvent.action == Stack_Event.Actions.ADD)
             {
                 if(addEvent(currEvent)) undo_stack.Push(currEvent);
@@ -61,7 +59,7 @@ namespace Event_scheduling_planning_system
             }
             else 
             {
-                if(editEvent(currEvent))
+                if(editEvent(ref currEvent))
                     undo_stack.Push(currEvent);
             }
         }
@@ -120,7 +118,7 @@ namespace Event_scheduling_planning_system
             return false;
         }
 
-        private static bool editEvent(Stack_Event currentEvent)
+        private static bool editEvent(ref Stack_Event currentEvent)
         {
             Stack_Event dbEvent = getOldData(currentEvent.eventId);
         
@@ -154,9 +152,10 @@ namespace Event_scheduling_planning_system
 
             if (r != -1)
             {
+                //Console.WriteLine("write name " + currentEvent.eventName + " in db");
                 currentEvent = dbEvent;
-                Console.WriteLine("Name old " + currentEvent.eventName);
-                Console.WriteLine("Name db " + dbEvent.eventName);
+                //Console.WriteLine("Name old " + currentEvent.eventName);
+                //Console.WriteLine("Name db " + dbEvent.eventName);
                 return true;
             }
             else
@@ -171,7 +170,7 @@ namespace Event_scheduling_planning_system
             c.Connection = MainForm.conn;
 
             c.CommandType = CommandType.Text;
-            Console.WriteLine("IDDDDDDDDDDDDDDDD " + eventId);
+            //Console.WriteLine("IDDDDDDDDDDDDDDDD " + eventId);
             c.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = :id";
 
             c.Parameters.Add("id", eventId);
@@ -180,7 +179,7 @@ namespace Event_scheduling_planning_system
 
             while (dr.Read())
             {
-                Console.WriteLine("Name "  + dr["EVENTNAME"].ToString());
+                //Console.WriteLine("Name "  + dr["EVENTNAME"].ToString());
                 oldEvent.eventName = dr["EVENTNAME"].ToString();
                 oldEvent.eventLoc = dr["EVENTLOCATION"].ToString();
                 oldEvent.eventStartDate = Convert.ToDateTime(dr["STARTDATETIME"].ToString());

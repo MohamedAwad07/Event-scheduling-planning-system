@@ -110,6 +110,7 @@ namespace Event_scheduling_planning_system
                 "new"
                 );
                 Stack_handling.saveAction(events);
+                Stack_handling.redo_stack.Clear();
                 this.Close();
             }
             else
@@ -181,6 +182,7 @@ namespace Event_scheduling_planning_system
             {
                 MessageBox.Show("Event updated successfully");
                 Stack_handling.saveAction(eventToPush);
+                Stack_handling.redo_stack.Clear();
                 DisplayEvents("displayEventsByStartDate");
                 this.Close();
             }

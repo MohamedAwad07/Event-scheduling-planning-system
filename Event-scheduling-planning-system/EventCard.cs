@@ -89,6 +89,7 @@ namespace Event_scheduling_planning_system
                 status
                 );
                 Stack_handling.saveAction(events);
+                Stack_handling.redo_stack.Clear();
                 this.Dispose();
             }
             else
