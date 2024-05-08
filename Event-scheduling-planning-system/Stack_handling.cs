@@ -20,45 +20,47 @@ namespace Event_scheduling_planning_system
 
         public static void undo()
         {
-            Console.WriteLine("undo called");
             if (undo_stack.Count <= 0) return;
             Stack_Event currEvent = undo_stack.Pop();
-            redo_stack.Push(currEvent);
 
-            Console.WriteLine("user id from undo " + currEvent.userId);
             if (currEvent.action == Stack_Event.Actions.ADD)
             {
-                deleteEvent(currEvent);
+                if(deleteEvent(currEvent))
+                    redo_stack.Push(currEvent);
             }
             else if (currEvent.action == Stack_Event.Actions.DELETE)
             {
-                addEvent(currEvent);
+                if(addEvent(currEvent))
+                    redo_stack.Push(currEvent);
             }
             else
             {
 
+                if(editEvent(ref currEvent))
+                {
+                    redo_stack.Push(currEvent);        
+                }
             }
         }
         public static void redo()
         {
-            Console.WriteLine("redo called");
             if (redo_stack.Count <= 0) return;
             Stack_Event currEvent = redo_stack.Pop();
-            undo_stack.Push(currEvent);
-
-
-            Console.WriteLine("user id from redo " + currEvent.userId);
+         
             if (currEvent.action == Stack_Event.Actions.ADD)
             {
-                addEvent(currEvent);
+                if(addEvent(currEvent)) undo_stack.Push(currEvent);
+
             }
             else if (currEvent.action == Stack_Event.Actions.DELETE)
             {
-                deleteEvent(currEvent);
+                if(deleteEvent(currEvent))
+                    undo_stack.Push(currEvent);
             }
-            else
+            else 
             {
-
+                if(editEvent(ref currEvent))
+                    undo_stack.Push(currEvent);
             }
         }
 
@@ -67,7 +69,7 @@ namespace Event_scheduling_planning_system
             undo_stack.Push(eventToSave);
         }
 
-        private static void deleteEvent(Stack_Event currEvent)
+        private static bool deleteEvent(Stack_Event currEvent)
         {
             OracleCommand c = new OracleCommand();
             c.Connection = MainForm.conn;
@@ -80,13 +82,14 @@ namespace Event_scheduling_planning_system
 
             if (r != -1)
             {
-
+                return true;
             }
             else
                 MessageBox.Show("Something went wrong");
+            return false;
         }
 
-        private static void addEvent(Stack_Event currEvent)
+        private static bool addEvent(Stack_Event currEvent)
         {
             OracleCommand c = new OracleCommand();
             c.Connection = MainForm.conn;
@@ -102,16 +105,92 @@ namespace Event_scheduling_planning_system
             c.Parameters.Add("reminderDate", currEvent.eventReminderDate);
             c.Parameters.Add("eventLocation", currEvent.eventLoc);
             c.Parameters.Add("status", currEvent.eventStatus);
-            c.Parameters.Add("userId", currEvent.userId);
+            c.Parameters.Add("userId", MainForm.userId);
 
             int r = c.ExecuteNonQuery();
 
             if (r != -1)
             {
-
+                return true;
             }
             else
                 MessageBox.Show("Something went wrong");
+            return false;
+        }
+
+        private static bool editEvent(ref Stack_Event currentEvent)
+        {
+            Stack_Event dbEvent = getOldData(currentEvent.eventId);
+        
+            OracleCommand c = new OracleCommand();
+            c.Connection = MainForm.conn;
+
+
+            c.CommandType = CommandType.Text;
+            c.CommandText =
+                @"
+                    UPDATE EVENTS SET
+                    EVENTNAME = :name ,
+                    EVENTLOCATION = :loc ,
+                    STARTDATETIME =  :startdate ,
+                    ENDDATETIME =  :enddate ,
+                    REMINDERDATETIME = :reminder,
+                    EVENTSTATUS = :status 
+                    WHERE EVENTID = :id
+                ";
+
+            c.Parameters.Add("name", currentEvent.eventName);
+            c.Parameters.Add("loc", currentEvent.eventLoc);
+            c.Parameters.Add("startdate", currentEvent.eventStartDate);
+            c.Parameters.Add("enddate", currentEvent.eventEndDate);
+            c.Parameters.Add("reminder", currentEvent.eventReminderDate);
+            c.Parameters.Add("status", currentEvent.eventStatus);
+            c.Parameters.Add("id", currentEvent.eventId);
+
+
+            int r = c.ExecuteNonQuery();
+
+            if (r != -1)
+            {
+                //Console.WriteLine("write name " + currentEvent.eventName + " in db");
+                currentEvent = dbEvent;
+                //Console.WriteLine("Name old " + currentEvent.eventName);
+                //Console.WriteLine("Name db " + dbEvent.eventName);
+                return true;
+            }
+            else
+                MessageBox.Show("Something went wrong");
+            return false;
+        }
+
+        public static Stack_Event getOldData(int eventId)
+        {
+            Stack_Event oldEvent = new Stack_Event(eventId , Stack_Event.Actions.EDIT);
+            OracleCommand c = new OracleCommand();
+            c.Connection = MainForm.conn;
+
+            c.CommandType = CommandType.Text;
+            //Console.WriteLine("IDDDDDDDDDDDDDDDD " + eventId);
+            c.CommandText = "SELECT * FROM EVENTS WHERE EVENTID = :id";
+
+            c.Parameters.Add("id", eventId);
+
+            OracleDataReader dr = c.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //Console.WriteLine("Name "  + dr["EVENTNAME"].ToString());
+                oldEvent.eventName = dr["EVENTNAME"].ToString();
+                oldEvent.eventLoc = dr["EVENTLOCATION"].ToString();
+                oldEvent.eventStartDate = Convert.ToDateTime(dr["STARTDATETIME"].ToString());
+                oldEvent.eventEndDate = Convert.ToDateTime(dr["ENDDATETIME"].ToString());
+                oldEvent.eventReminderDate = Convert.ToDateTime(dr["REMINDERDATETIME"].ToString());
+                oldEvent.eventStatus = dr["EVENTSTATUS"].ToString();
+            }
+            dr.Close();
+
+            return oldEvent;
         }
     }
+
 }

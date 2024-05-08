@@ -58,7 +58,7 @@
             // 
             this.end_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.end_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.end_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
+            this.end_DT.CustomFormat = "MM/dd/yyyy  hh:mm tt";
             this.end_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.end_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.end_DT.Location = new System.Drawing.Point(12, 171);
@@ -101,7 +101,7 @@
             // 
             this.reminder_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.reminder_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.reminder_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
+            this.reminder_DT.CustomFormat = "MM/dd/yyyy  hh:mm tt";
             this.reminder_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reminder_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.reminder_DT.Location = new System.Drawing.Point(12, 241);
@@ -126,7 +126,7 @@
             // 
             this.start_DT.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.start_DT.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
-            this.start_DT.CustomFormat = "dd/MM/yyyy  hh:mm tt";
+            this.start_DT.CustomFormat = "MM/dd/yyyy  hh:mm tt";
             this.start_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.start_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.start_DT.Location = new System.Drawing.Point(12, 106);
