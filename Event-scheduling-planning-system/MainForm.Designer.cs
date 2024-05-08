@@ -73,6 +73,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.redo_btn = new System.Windows.Forms.Button();
+            this.undo_btn = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -425,6 +427,8 @@
             // 
             this.Home_header.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home_header.BackgroundImage")));
             this.Home_header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Home_header.Controls.Add(this.undo_btn);
+            this.Home_header.Controls.Add(this.redo_btn);
             this.Home_header.Controls.Add(this.label3);
             this.Home_header.Controls.Add(this.label2);
             this.Home_header.Controls.Add(this.label1);
@@ -722,6 +726,26 @@
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // redo_btn
+            // 
+            this.redo_btn.Location = new System.Drawing.Point(616, 59);
+            this.redo_btn.Name = "redo_btn";
+            this.redo_btn.Size = new System.Drawing.Size(17, 19);
+            this.redo_btn.TabIndex = 35;
+            this.redo_btn.Text = ">";
+            this.redo_btn.UseVisualStyleBackColor = true;
+            this.redo_btn.Click += new System.EventHandler(this.redo_btn_Click);
+            // 
+            // undo_btn
+            // 
+            this.undo_btn.Location = new System.Drawing.Point(587, 59);
+            this.undo_btn.Name = "undo_btn";
+            this.undo_btn.Size = new System.Drawing.Size(17, 19);
+            this.undo_btn.TabIndex = 36;
+            this.undo_btn.Text = "<";
+            this.undo_btn.UseVisualStyleBackColor = true;
+            this.undo_btn.Click += new System.EventHandler(this.undo_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,6 +824,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button undo_btn;
+        private System.Windows.Forms.Button redo_btn;
     }
 }
 
