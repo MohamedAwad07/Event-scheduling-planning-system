@@ -75,9 +75,9 @@
             this.label3.Location = new System.Drawing.Point(9, 150);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 17);
+            this.label3.Size = new System.Drawing.Size(176, 17);
             this.label3.TabIndex = 1;
-            this.label3.Text = "End Date";
+            this.label3.Text = "End Date (mm/dd/yyyy)";
             // 
             // saveEvent_btn
             // 
@@ -118,9 +118,9 @@
             this.label1.Location = new System.Drawing.Point(9, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 17);
+            this.label1.Size = new System.Drawing.Size(217, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Reminder Date";
+            this.label1.Text = "Reminder Date (mm/dd/yyyy)";
             // 
             // start_DT
             // 
@@ -143,9 +143,9 @@
             this.label2.Location = new System.Drawing.Point(9, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.Size = new System.Drawing.Size(183, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Start Date";
+            this.label2.Text = "Start Date (mm/dd/yyyy)";
             // 
             // eventLocation_txb
             // 

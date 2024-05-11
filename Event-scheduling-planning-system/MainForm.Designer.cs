@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LogIn_page = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.eye_close1 = new System.Windows.Forms.Button();
             this.signUp_btn = new System.Windows.Forms.Label();
             this.password1_txb = new System.Windows.Forms.TextBox();
@@ -75,9 +74,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.redo_btn = new System.Windows.Forms.Button();
-            this.undo_btn = new System.Windows.Forms.Button();
-            this.viewReport_btn = new System.Windows.Forms.Button();
+            this.admin_btn = new System.Windows.Forms.Button();
+            this.crystal_btn = new System.Windows.Forms.Button();
             this.LogIn_page.SuspendLayout();
             this.SignUp_page.SuspendLayout();
             this.Home_page.SuspendLayout();
@@ -90,8 +88,8 @@
             // 
             this.LogIn_page.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogIn_page.BackgroundImage")));
             this.LogIn_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LogIn_page.Controls.Add(this.viewReport_btn);
-            this.LogIn_page.Controls.Add(this.button1);
+            this.LogIn_page.Controls.Add(this.crystal_btn);
+            this.LogIn_page.Controls.Add(this.admin_btn);
             this.LogIn_page.Controls.Add(this.eye_close1);
             this.LogIn_page.Controls.Add(this.signUp_btn);
             this.LogIn_page.Controls.Add(this.password1_txb);
@@ -104,17 +102,6 @@
             this.LogIn_page.Name = "LogIn_page";
             this.LogIn_page.Size = new System.Drawing.Size(652, 484);
             this.LogIn_page.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(35, 427);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login as admin";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // eye_close1
             // 
@@ -452,25 +439,25 @@
             // 
             this.undo_btn.AutoSize = true;
             this.undo_btn.BackColor = System.Drawing.Color.Transparent;
-            this.undo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.undo_btn.Location = new System.Drawing.Point(569, 47);
+            this.undo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.undo_btn.Location = new System.Drawing.Point(588, 35);
             this.undo_btn.Margin = new System.Windows.Forms.Padding(0);
             this.undo_btn.Name = "undo_btn";
-            this.undo_btn.Size = new System.Drawing.Size(38, 35);
+            this.undo_btn.Size = new System.Drawing.Size(30, 30);
             this.undo_btn.TabIndex = 36;
             this.undo_btn.Text = "◀";
             this.toolTip1.SetToolTip(this.undo_btn, "Undo");
-            this.undo_btn.UseVisualStyleBackColor = false;
+            this.undo_btn.UseVisualStyleBackColor = true;
             this.undo_btn.Click += new System.EventHandler(this.undo_btn_Click);
             // 
             // redo_btn
             // 
             this.redo_btn.AutoSize = true;
-            this.redo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.redo_btn.Location = new System.Drawing.Point(610, 47);
+            this.redo_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.redo_btn.Location = new System.Drawing.Point(618, 35);
             this.redo_btn.Margin = new System.Windows.Forms.Padding(0);
             this.redo_btn.Name = "redo_btn";
-            this.redo_btn.Size = new System.Drawing.Size(38, 35);
+            this.redo_btn.Size = new System.Drawing.Size(30, 30);
             this.redo_btn.TabIndex = 35;
             this.redo_btn.Text = "▶";
             this.toolTip1.SetToolTip(this.redo_btn, "Redo");
@@ -528,7 +515,7 @@
             this.logOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(14)))), ((int)(((byte)(92)))));
             this.logOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.logOut_btn.Location = new System.Drawing.Point(592, 11);
+            this.logOut_btn.Location = new System.Drawing.Point(590, 2);
             this.logOut_btn.Margin = new System.Windows.Forms.Padding(2);
             this.logOut_btn.Name = "logOut_btn";
             this.logOut_btn.Size = new System.Drawing.Size(58, 25);
@@ -759,37 +746,41 @@
             this.timer2.Interval = 120000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // redo_btn
+            // admin_btn
             // 
-            this.redo_btn.Location = new System.Drawing.Point(616, 59);
-            this.redo_btn.Name = "redo_btn";
-            this.redo_btn.Size = new System.Drawing.Size(17, 19);
-            this.redo_btn.TabIndex = 35;
-            this.redo_btn.Text = ">";
-            this.redo_btn.UseVisualStyleBackColor = true;
-            this.redo_btn.Click += new System.EventHandler(this.redo_btn_Click);
+            this.admin_btn.BackColor = System.Drawing.Color.Transparent;
+            this.admin_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.admin_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.admin_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.admin_btn.FlatAppearance.BorderSize = 0;
+            this.admin_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.admin_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.admin_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.admin_btn.Location = new System.Drawing.Point(38, 431);
+            this.admin_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.admin_btn.Name = "admin_btn";
+            this.admin_btn.Size = new System.Drawing.Size(109, 28);
+            this.admin_btn.TabIndex = 9;
+            this.admin_btn.UseVisualStyleBackColor = false;
+            this.admin_btn.Click += new System.EventHandler(this.admin_btn_Click);
             // 
-            // undo_btn
+            // crystal_btn
             // 
-            this.undo_btn.Location = new System.Drawing.Point(587, 59);
-            this.undo_btn.Name = "undo_btn";
-            this.undo_btn.Size = new System.Drawing.Size(17, 19);
-            this.undo_btn.TabIndex = 36;
-            this.undo_btn.Text = "<";
-            this.undo_btn.UseVisualStyleBackColor = true;
-            this.undo_btn.Click += new System.EventHandler(this.undo_btn_Click);
-            // 
-            // viewReport_btn
-            // 
-            this.viewReport_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewReport_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewReport_btn.Location = new System.Drawing.Point(504, 425);
-            this.viewReport_btn.Name = "viewReport_btn";
-            this.viewReport_btn.Size = new System.Drawing.Size(125, 23);
-            this.viewReport_btn.TabIndex = 8;
-            this.viewReport_btn.Text = "View crystal Report";
-            this.viewReport_btn.UseVisualStyleBackColor = true;
-            this.viewReport_btn.Click += new System.EventHandler(this.viewReport_btn_Click);
+            this.crystal_btn.BackColor = System.Drawing.Color.Transparent;
+            this.crystal_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.crystal_btn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.crystal_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.crystal_btn.FlatAppearance.BorderSize = 0;
+            this.crystal_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.crystal_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.crystal_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crystal_btn.Location = new System.Drawing.Point(509, 431);
+            this.crystal_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.crystal_btn.Name = "crystal_btn";
+            this.crystal_btn.Size = new System.Drawing.Size(109, 28);
+            this.crystal_btn.TabIndex = 10;
+            this.crystal_btn.UseVisualStyleBackColor = false;
+            this.crystal_btn.Click += new System.EventHandler(this.crystal_btn_Click);
             // 
             // MainForm
             // 
@@ -798,8 +789,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.eye_open2;
             this.ClientSize = new System.Drawing.Size(652, 484);
-            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.LogIn_page);
+            this.Controls.Add(this.Home_page);
             this.Controls.Add(this.SignUp_page);
             this.Controls.Add(this.admin_page);
             this.Controls.Add(this.Start_page);
@@ -863,7 +854,6 @@
         private System.Windows.Forms.Button admin_save_btn;
         private System.Windows.Forms.Button admin_search_btn;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -871,7 +861,8 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button undo_btn;
         private System.Windows.Forms.Button redo_btn;
-        private System.Windows.Forms.Button viewReport_btn;
+        private System.Windows.Forms.Button crystal_btn;
+        private System.Windows.Forms.Button admin_btn;
     }
 }
 

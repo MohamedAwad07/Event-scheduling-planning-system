@@ -441,5 +441,16 @@ namespace Event_scheduling_planning_system
             CrystalReportForm crf = new CrystalReportForm();
             crf.ShowDialog();
         }
+
+        private void admin_btn_Click(object sender, EventArgs e)
+        {
+            admin_page.BringToFront();
+        }
+
+        private void crystal_btn_Click(object sender, EventArgs e)
+        {
+            CrystalReportForm crf = new CrystalReportForm();
+            crf.ShowDialog();
+        }
     }
 }
